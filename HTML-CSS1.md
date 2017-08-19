@@ -154,6 +154,12 @@ target:_self和_blank
 -->
 ```
 
+(4) 移动设备viewport:如果不是响应式网站，不要使用initial-scale或者禁用缩放。
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+<!-- `width=device-width` 会导致 iPhone 5 添加到主屏后以 WebApp 全屏模式打开页面时出现黑边  -->
+```
 
 11. 页面浏览器标题前的logo怎么设置?
 
