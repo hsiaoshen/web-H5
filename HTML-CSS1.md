@@ -120,3 +120,34 @@ target:_self和_blank
 <!-- a标签的href写#id名 --->
 <a href="#k">跳转锚点</a>
 ```
+
+10. meta标签的使用
+
+[meta](https://segmentfault.com/a/1190000002407912)
+
+```html
+<meta  content="" http-equiv="" name=""/>
+```
+常见用途有:
+
+(1) 设置编码格式
+
+```html
+<meta charset="UTF-8">
+```
+(2) 定时页面跳转和刷新
+
+```html
+<meta http-equiv="refresh" content="5;url='http://www.baidu.com'" />
+```
+
+(3) 
+
+
+11. 页面浏览器标题前的logo怎么设置?
+
+```html
+<head>
+<link rel="icon" href="图片位置" type="image/x-icon"/ media='screen'>
+</head>
+```
