@@ -38,6 +38,13 @@ font: font-style font-weight font-size/line-height font-family
 
 可以方法有:单词,reg(0,0,0),reg(0,0,0,1),#fff
 
+## 背景设置
+
+### back-image
+
+background-image: url("image/xxx.jpg);
+
+
 ## 其他属性(一个汉字算一个字符)
 
 ### letter-spacing
@@ -94,6 +101,13 @@ line-height:height(父元素的高度)
 2. break-all 允许在单词内换行。
 3. keep-all 只能在半角空格或连字符处换行。
 
+### overflow
 
+属性值:
+
+1. hidden:超出部分隐藏
+2. visible:超出部分继续显示在元素外
+3. scroll: 超出的内容会出现滚动条
+4. auto: 不超出不隐藏,超出会出现滚动条
 
 
