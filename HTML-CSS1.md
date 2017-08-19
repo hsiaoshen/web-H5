@@ -135,13 +135,24 @@ target:_self和_blank
 ```html
 <meta charset="UTF-8">
 ```
-(2) 定时页面跳转和刷新
+(2) 定时页面跳转和刷新(content中间用分号隔开)
 
 ```html
 <meta http-equiv="refresh" content="5;url='http://www.baidu.com'" />
 ```
 
-(3) 
+(3) 搜索引擎的检索方式(content中用逗号隔开)
+
+```html
+<meta name="robots" content="index,follow" />
+<!-- all：文件将被检索，且页面上的链接可以被查询；
+    none：文件将不被检索，且页面上的链接不可以被查询；
+    index：文件将被检索；
+    follow：页面上的链接可以被查询；
+    noindex：文件将不被检索；
+    nofollow：页面上的链接不可以被查询。
+-->
+```
 
 
 11. 页面浏览器标题前的logo怎么设置?
