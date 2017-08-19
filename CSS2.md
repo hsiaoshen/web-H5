@@ -1,4 +1,4 @@
-# 常用CSS
+# 常用CSS(关于文本)
 
 ## 字体设置
 
@@ -33,16 +33,6 @@ font: font-style font-weight font-size/line-height font-family
 1. overline：上划线。
 1. line-through：删除线
 
-
-## 颜色设置
-
-可以方法有:单词,reg(0,0,0),reg(0,0,0,1),#fff
-
-## 背景设置
-
-### back-image
-
-background-image: url("image/xxx.jpg);
 
 
 ## 其他属性(一个汉字算一个字符)
