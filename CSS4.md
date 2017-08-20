@@ -99,3 +99,4 @@ div{margin:20px 0;border:1px solid #aaa;}
 ```css
 float:right(left,none)
 ```
+规律:
