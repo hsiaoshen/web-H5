@@ -104,3 +104,25 @@ float:right(left,none)
 1. 一个浮动的元素具有行内块元素的属性
 2. 一个盒子的所有子元素都浮动就会排列在一行,若没设置父元素的高度,那么高度为0
 3. 如果一个元素的上一个元素是浮动的,若该元素不浮动就上浮;若上个元素不浮动,就和上个元素的底部相平
+
+#### 清除浮动
+
+方法:
+1. 设置高度
+2. 在浮动的父盒子中添加空元素,并为空元素添加clear:both属性
+3. 给浮动的父盒子添加overflow:hidden(scroll或auto)
+4. 使用伪元素
+```css
+            .clearfix::after, 
+            .clearfix::before{
+                content: '';    //必须有
+                height: 0px;
+                line-height: 0px; 
+                display: block;
+                visibility: hidden;
+                clear: both;
+                }
+	      .clearfix{
+		zoom:1 //兼容ie	
+		}
+```
