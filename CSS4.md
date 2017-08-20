@@ -75,11 +75,11 @@ div{margin:20px 0;border:1px solid #aaa;}
 </div>
 ```
 
-
+总结:
 1. margin折叠只发生在块级元素上；
 2. 浮动元素的margin不与任何margin发生折叠；
 3. 设置了属性overflow且值不为visible的块级元素，将不与它的子元素发生margin折叠；
 4. 绝对定位元素的margin不与任何margin发生折叠；
 5. 根元素的margin不与其它任何margin发生折叠；
 
-解决方案:
+解决嵌套元素合并方案:给父元素加边框或者内边距
