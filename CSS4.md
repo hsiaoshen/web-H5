@@ -83,3 +83,13 @@ div{margin:20px 0;border:1px solid #aaa;}
 5. 根元素的margin不与其它任何margin发生折叠；
 
 解决嵌套元素合并方案:给父元素加边框或者内边距
+
+## 盒子
+
+### 浮动
+
+浮动:设定了浮动的元素会脱离标准文档流的控制,出现在父元素指定的位置.
+
+```css
+float:right(left,none)
+```
