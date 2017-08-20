@@ -37,3 +37,13 @@ border-radius: 水平半径/垂直半径
 4. 4个值: 上左  上右  下右 下左
 
 
+## 外边距 margin
+
+小技巧:盒子水平居中
+```css
+margin:0 auto 
+```
+取消浏览器的默认属性
+```css
+* { margin:0; padding: 0}
+```
