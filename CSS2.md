@@ -100,4 +100,11 @@ line-height:height(父元素的高度)
 3. scroll: 超出的内容会出现滚动条
 4. auto: 不超出不隐藏,超出会出现滚动条
 
+### text-transform
+
+1. none：无转换
+2. capitalize：将每个单词的第一个字母转换成大写
+3. uppercase：将每个单词转换成大写
+4. lowercase：将每个单词转换成小写
+
 
