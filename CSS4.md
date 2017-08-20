@@ -86,6 +86,12 @@ div{margin:20px 0;border:1px solid #aaa;}
 
 ## 盒子
 
+把一个元素变成输入框:
+
+```
+<p contenteditable></p>
+```
+
 ### 浮动
 
 浮动:设定了浮动的元素会脱离标准文档流的控制,出现在父元素指定的位置.
