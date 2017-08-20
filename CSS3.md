@@ -35,3 +35,38 @@ background-position:top left/10px 20px
 从前景内容的形状（比如文字）作为裁剪区域向外裁剪，如此即可实现使用背景作为填充色之类的遮罩效果
 
 #### 遮照效果
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>遮照效果</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link href="css/style.css" rel="stylesheet"> -->
+        <style>
+            #demo{
+                width: 800px;
+                 height: 300px; 
+                margin: 50px auto;
+                text-align: center;
+                font:bolder 200px "黑体";
+                -webkit-background-clip:text;
+                -webkit-text-fill-color: transparent;    
+                background-image: url('http://demo.doyoe.com/css3/background-clip/skin/girl.jpg');
+                  /* background-position: center top;   */
+                /* text-transform:uppercase; */
+                -webkit-animation: move 20s ease infinite; 
+            }
+            @-webkit-keyframes move{
+                0%{background-position:left top;}
+	            50%{background-position:right top;}
+	            100%{background-position:left top;}
+            }
+        </style>
+    </head>
+    <body>
+        <p id="demo">遮照效果</p>
+    </body>
+</html>
+```
