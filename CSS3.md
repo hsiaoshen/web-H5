@@ -33,3 +33,5 @@ background-position:top left/10px 20px
 3. content-box：从content区域开始向外裁剪背景。
 4. text:text：
 从前景内容的形状（比如文字）作为裁剪区域向外裁剪，如此即可实现使用背景作为填充色之类的遮罩效果
+
+#### 遮照效果
