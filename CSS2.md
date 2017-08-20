@@ -107,4 +107,8 @@ line-height:height(父元素的高度)
 3. uppercase：将每个单词转换成大写
 4. lowercase：将每个单词转换成小写
 
+### -webkit-text-fill-color
 
+只适合-webkit
+
+transparent:透明
