@@ -117,6 +117,11 @@ margin:0 auto;
 </body>
 </html>
 ```
+注意事项:
+
+1. 必须有高度
+2. 建议设置overflow:auto来防止内容越界溢出
+
 
 ## 宽高已知
 
