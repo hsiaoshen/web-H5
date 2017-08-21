@@ -10,7 +10,8 @@
 
 自己的理解:
 1. 如果没设置flex-grow,那么flex-grow:0
-2. 
+2. 计算:(伸缩盒子的总长度 - 每个子盒子的固定长度) / flex-grow的总值 * 每个flex-grow的值   +  每个盒子的固定长度
+
 ```html
 <ul class="flex">
     <li>a</li>
