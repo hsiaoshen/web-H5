@@ -72,3 +72,13 @@ search - 搜索域，语义化，表示定义搜索框
 <div contenteditable></div>
 ```
 
+## select控件
+
+```html
+<select size="" multiple>
+  <option>选项1</option>
+  <option>选项2</option>
+  <option>选项3</option>
+  ...
+</select>
+```
