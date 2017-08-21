@@ -68,10 +68,10 @@
 各行将会伸展以占用剩余的空间。如果剩余的空间是负数，该值等效于'flex-start'。在其它情况下，剩余空间被所有行平分，以扩大它们的侧轴尺寸。
 
 
-### aligin-items,aligin-self(侧轴)
+### aligin-items,aligin-self(侧轴上的对齐方式)
 
 
-### justify-content(主轴)
+### justify-content(主轴的对齐方式)
 
 ## react
 
