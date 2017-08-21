@@ -53,3 +53,8 @@ Date Pickers - 日期时间选择器-------样式不能修改，移动端用的�
 search - 搜索域，语义化，表示定义搜索框
 
 ***
+
+2. checked: 默认选择那个
+3. disabled: 控件禁止
+4. readonly:只读
+5. maxlength:可输入的最大值
