@@ -58,3 +58,17 @@ search - 搜索域，语义化，表示定义搜索框
 3. disabled: 控件禁止
 4. readonly:只读
 5. maxlength:可输入的最大值
+
+## textarea(文本域)
+
+```html
+<textarea cols="列数" rows="行数">
+....
+</textarea>
+```
+## 能把div变输入框
+
+```html
+<div contenteditable></div>
+```
+
