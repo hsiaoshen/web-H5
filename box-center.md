@@ -1,6 +1,8 @@
 # 盒子的局中问题(子绝父相)
 
-## 只考虑水平居中,,没有相对定位
+[居中地址](http://blog.csdn.net/freshlover/article/details/11579669)
+
+## 只考虑水平居中,没有相对定位
 
 ```css
 margin:0 auto;
