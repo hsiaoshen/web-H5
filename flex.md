@@ -40,12 +40,16 @@
 
 #### flex-direction(定义弹性盒子元素的排列方向)
 
-1. ：主轴与行内轴方向作为默认的书写模式。即横向从左到右排列（左对齐）。
-row-reverse：对齐方式与row相反。
-column：主轴与块轴方向作为默认的书写模式。即纵向从上往下排列（顶对齐）。
-column-reverse：对齐方式与column相反。
+1. row：主轴与行内轴方向作为默认的书写模式。即横向从左到右排列（左对齐）。
+2. row-reverse：对齐方式与row相反。
+3. column：主轴与块轴方向作为默认的书写模式。即纵向从上往下排列（顶对齐）。
+4. column-reverse：对齐方式与column相反。
 
+#### flex-wrap(控制flex容器是单行或者多行，同时横轴的方向决定了新行堆叠的方向)
 
+1. nowrap：flex容器为单行。该情况下flex子项可能会溢出容器
+2. wrap：flex容器为多行。该情况下flex子项溢出的部分会被放置到新行，子项内部会发生断行
+3. wrap-reverse：反转 wrap 排列。
 
 
 
