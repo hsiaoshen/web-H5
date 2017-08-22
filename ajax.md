@@ -36,8 +36,25 @@ XML数据或者字符串
 
 有，IE中通过new ActiveXObject()得到，Firefox中通过new XMLHttpRequest()得到
 
+## 用到了什么技术?
+
+1. Ajax（Asynchronous JavaScript + XML）的定义
+2. 基于web标准（standards-based presentation）XHTML+CSS的表示；
+3. 使用 DOM（Document Object Model）进行动态显示及交互；
+4. 使用 XML 和 XSLT 进行数据交换及相关操作；
+5. 使用 XMLHttpRequest 进行异步数据查询、检索；
+6. 使用 JavaScript 将所有的东西绑定在一起。
+
 ## ajax的具体使用
+
 
 ### 原生的ajax
 
 ### JQuery的ajax操作
+
+#### 你用的什么框架?
+
+JQuery
+
+#### 具体操作
+
