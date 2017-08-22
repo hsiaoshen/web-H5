@@ -14,7 +14,9 @@
 2. method: 用于设置表单数据的提交方式,get/post
 3. name: 用于定义指定表单的名称,以便区分同一个页面的多个表单
 
-## input控件(单标签)
+
+## 控件
+### input控件(单标签)
 
 ```html
 
@@ -59,20 +61,20 @@ search - 搜索域，语义化，表示定义搜索框
 4. readonly:只读
 5. maxlength:可输入的最大值
 
-## textarea(文本域)
+### textarea(文本域)
 
 ```html
 <textarea cols="列数" rows="行数">
 ....
 </textarea>
 ```
-## 能把div变输入框
+### 能把div变输入框
 
 ```html
 <div contenteditable></div>
 ```
 
-## select控件
+### select控件
 
 ```html
 <select size="" multiple>          //size:可视的的选项有几个
@@ -82,3 +84,25 @@ search - 搜索域，语义化，表示定义搜索框
   ...
 </select>
 ```
+
+### fieldset控件
+
+用于将form中的控件进行分组，filedset没有必须或唯一的属性。legend定义标题
+
+```html
+<form action="test.php" method="post">
+  <fieldset>
+    <legend>Title</legend>
+    <input type="radio" id="radio">
+  </fieldset>
+</form>
+```
+
+## jQuery关于表单的操作
+
+1. :button --> 选中为button按钮的所有元素,包括input类型和button类型的按钮,等同于$("button, input[type='button']")
+2. :checkbox --> 等同于$('[type=checkbox]'), 选择所有类型为复选框的元素。
+3. :checked --> 适用于复选框,单选框和option,所有选中的元素
+4. :disabled --> 选中所有被禁用的元素
+5. :focus --> 获取焦点的元素
+
