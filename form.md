@@ -105,4 +105,12 @@ search - 搜索域，语义化，表示定义搜索框
 3. :checked --> 适用于复选框,单选框和option,所有选中的元素
 4. :disabled --> 选中所有被禁用的元素
 5. :focus --> 获取焦点的元素
-
+6. :input --> 选择所有 input, textarea, select 和 button 元素.
+7. :file
+8. :image
+9. :password
+10. :adio
+:reset
+:selected
+:submit
+:text
