@@ -113,9 +113,13 @@ function addURLParam(url, name, value){
 xhr.send(null);
 ```
 
-**post**
-```html
+**post:通常用于向服务器发送应该被保存的数据**
 
+默认情况下，服务器对 POST 请求和提交 Web 表单的请求并不会一视同仁。因此，服务器端必须有程序来读取发送过来的原始数据，并从中解析出有用的部分。不过，我们可以使用 XHR 来模仿表单提交：首先将 Content-Type 头部信息设置为 application/x-www-form-urlencoded，也就是表单提交时的内容类型，其次是以适当的格式创建一个字符串。
+```html
+xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+var form = document.getElementById("user-info");
+xhr.send(序列化的表单数据字符串); //格式"name=value&name=value&name=value"
 ```
 
 
