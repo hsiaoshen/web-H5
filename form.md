@@ -109,8 +109,8 @@ search - 搜索域，语义化，表示定义搜索框
 7. :file
 8. :image
 9. :password
-10. :adio
-:reset
-:selected
-:submit
-:text
+10. :radio
+11. :reset
+12. :selected
+13. :submit
+14. :text
