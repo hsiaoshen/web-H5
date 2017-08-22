@@ -98,7 +98,22 @@ xhr.send(null);  //若get或head方法,设置主体为null
 // xhr.send(document);
 
 ```
-**get**
+**get:最常用于向服务器查询某些信息**
+
+**辅助编码函数**
+```html
+function addURLParam(url, name, value){
+    url += url.indexOf('?') == -1 ? '?' : '&';
+    url += encodeURIComponent(name) + "=" + encodeURIComponent(value);
+    return url;
+}
+```
+
+```html
+xhr.send(null);
+```
+
+**post**
 ```html
 
 ```
