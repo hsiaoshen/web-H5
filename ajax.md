@@ -50,6 +50,61 @@ XML数据或者字符串或者json,jsonp数据
 
 ### 原生的ajax
 
+第一步:创建XMLHttpRequest对象
+```html
+function createXHR(){
+    if (typeof XMLHttpRequest != "undefined"){
+        return new XMLHttpRequest();
+    } else if (typeof ActiveXObject != "undefined"){
+         if (typeof arguments.callee.activeXString != "string"){
+            var versions = [ "MSXML2.XMLHttp.6.0", "MSXML2.XMLHttp.3.0",
+            "MSXML2.XMLHttp"], i, len;
+            for (i=0,len=versions.length; i < len; i++){
+                try {
+                    new ActiveXObject(versions[i]);
+                    arguments.callee.activeXString = versions[i];
+                    break;
+                } catch (ex){
+                    //跳过
+                }
+            }
+        }
+        return new ActiveXObject(arguments.callee.activeXString);
+     } else {
+            throw new Error("No XHR object available.");
+    }
+}
+
+var xhr =  createXHR();
+
+```
+
+第二步:open方法(不会发送请求,只是准备一个请求以备发送)
+
+```html
+xhr.open('method',url,async?)
+
+参数: 第三个参数是不是异步
+```
+
+第三步:send(发送请求,但是分get和post2种情况)
+
+```html
+xhr.send(null);  //若get或head方法,设置主体为null
+// xhr.send('string');
+// xhr.send(new Blob());
+// xhr.send(new Int8Array());
+// xhr.send({ form: 'data' });
+// xhr.send(document);
+
+```
+**get**
+```html
+
+```
+
+
+
 ### JQuery的ajax操作
 
 #### 你用的什么框架?
