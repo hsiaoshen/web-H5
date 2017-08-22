@@ -30,7 +30,7 @@ XMLHttpRequest对象,是一种支持异步请求的技术,通过它可以使用j
 
 ## 数据形式
 
-XML数据或者字符串
+XML数据或者字符串或者json,jsonp数据
 
 ##  XMLHttpRequest对象在IE和Firefox中创建方式有没有不同？
 
