@@ -60,6 +60,7 @@ search - 搜索域，语义化，表示定义搜索框
 3. disabled: 控件禁止
 4. readonly:只读
 5. maxlength:可输入的最大值
+6. placehoder: 
 
 ### textarea(文本域)
 
@@ -114,3 +115,4 @@ search - 搜索域，语义化，表示定义搜索框
 12. :selected
 13. :submit
 14. :text
+15. val()和val(value) --> 获取表单中的值或者给表单赋值
