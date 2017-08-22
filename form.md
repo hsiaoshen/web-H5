@@ -75,9 +75,9 @@ search - 搜索域，语义化，表示定义搜索框
 ## select控件
 
 ```html
-<select size="" multiple>
-  <option>选项1</option>
-  <option>选项2</option>
+<select size="" multiple>          //size:可视的的选项有几个
+  <option selceted>选项1</option>   //selected:默认选项
+  <option>选项2</option>
   <option>选项3</option>
   ...
 </select>
