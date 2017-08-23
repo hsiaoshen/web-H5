@@ -55,3 +55,12 @@ E:nth-child
 2.E:first-line/E::first-line
 3.E:before/E::before
 4.E:after/E::after
+
+## 渐变
+
+用来代替图片的
+
+相比图片的好处：
+
+1. 加快页面加载时间，减少带宽占用
+2. 缩放效果比图片好，使用更灵活
