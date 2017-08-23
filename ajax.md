@@ -117,10 +117,43 @@ xhr.send(null);
 
 默认情况下，服务器对 POST 请求和提交 Web 表单的请求并不会一视同仁。因此，服务器端必须有程序来读取发送过来的原始数据，并从中解析出有用的部分。不过，我们可以使用 XHR 来模仿表单提交：首先将 Content-Type 头部信息设置为 application/x-www-form-urlencoded，也就是表单提交时的内容类型，其次是以适当的格式创建一个字符串。
 ```html
-xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-var form = document.getElementById("user-info");
+xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");   //和get最重要的区别
 xhr.send(序列化的表单数据字符串); //格式"name=value&name=value&name=value"
 ```
+
+第四步:接受相应
+
+相关属性:
+1. responseText：作为响应主体被返回的文本。
+2. responseXML：如果响应的内容类型是“text/xml”或“application/xml”，这个属性中将保存包含着响应数据的 XML DOM 文档。
+4. status：响应的 HTTP 状态。
+5. statusText： HTTP 状态的说明。
+
+**readState属性(表示请求响应过程的当前活动阶段)**:
+
+只要 readyState 属性的值由一个值变成另一个值，都会触发一次 readystatechange 事件。
+
+* 0：未初始化。尚未调用 open()方法。
+* 1：启动。已经调用 open()方法，但尚未调用 send()方法。
+* 2：发送。已经调用 send()方法，但尚未接收到响应。
+* 3：接收。已经接收到部分响应数据。
+* 4：完成。已经接收到全部响应数据，而且已经可以在客户端使用了
+
+```html
+xhr.onreadystatechange = function(){
+    if (xhr.readyState == 4){
+        if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
+            alert(xhr.responseText);
+        } else {
+            alert("Request was unsuccessful: " + xhr.status);
+        }
+    }
+};
+```
+
+
+
+
 
 
 
