@@ -21,3 +21,37 @@ hack 使其可以在低版本浏览器上正常浏览。(针对那些最高级�
   -webkit-transition: all .5s;
 }
 ```
+
+## 选择器
+
+关系选择器
+1.包含选择符(E F)
+2.子选择符(E>F)
+3.相邻选择符(E+F)
+4.兄弟选择符(E~F)
+
+属性选择器
+1.E[att]
+2.E[att=“val”]
+3.E[att~=“val”]
+4.E[att^=“val”]
+5.E[att$=“val”]
+6.E[att*=“val”]
+7.E[att|=“val”]
+
+伪类选择器
+常用：
+E:link
+E:visited
+E:hover
+E:active
+E:focus
+E:first-child
+E:last-child
+E:nth-child
+
+伪元素
+1.E:first-letter/E::first-letter
+2.E:first-line/E::first-line
+3.E:before/E::before
+4.E:after/E::after
