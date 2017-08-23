@@ -165,3 +165,29 @@ JQuery
 
 #### 具体操作
 
+**get**
+```html
+$.get(url,data,function(data){
+    alert(data)
+});
+
+/*
+参数:
+1. url: 请求的url
+2. data: 向服务器传的数据
+3. callback:请求成功执行的回调函数
+*/
+```
+**post**
+```html
+$.post(url,data,function(data){
+    alert(data)
+});
+
+/*
+参数:
+1. url: 请求的url
+2. data: 向服务器传的数据
+3. callback:请求成功执行的回调函数
+*/
+```
