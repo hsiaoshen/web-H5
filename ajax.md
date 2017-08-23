@@ -165,7 +165,7 @@ JQuery
 
 #### 具体操作
 
-**get**
+**$.get**
 ```html
 $.get(url,data,function(data){
     alert(data)
@@ -178,7 +178,7 @@ $.get(url,data,function(data){
 3. callback:请求成功执行的回调函数
 */
 ```
-**post**
+**$.post**
 ```html
 $.post(url,data,function(data){
     alert(data)
@@ -190,4 +190,22 @@ $.post(url,data,function(data){
 2. data: 向服务器传的数据
 3. callback:请求成功执行的回调函数
 */
+```
+
+**$.ajax**
+```html
+$.ajax(
+url:请求的url,
+type:请求的方式(一般有get,post,put,head),
+async:是否异步(True或False),
+cache:是否缓存该页面(默认true,若dateType为jsonp或者script,默认为false),
+contentType:发送到服务器内容编码类型(默认值: "application/x-www-form-urlencoded"),
+context:这个对象用于设置 Ajax 相关回调函数的上下文(就是要操作的元素,此时success回调函数的this指向该元素),
+data:data,
+dataType:预期服务器返回的数据类型(如果不指定，jQuery 将自动根据 HTTP 包 MIME 信息来智能判断,若jsonp格式,则能解决跨域问题),
+timeout:设置请求超时(毫秒),
+success:请求成功的回调函数,
+error:请求失败的回调函数,
+complete:请求完成执行的回调函数(无论成功或失败都执行)
+)
 ```
