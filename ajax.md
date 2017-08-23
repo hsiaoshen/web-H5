@@ -157,7 +157,7 @@ xhr.onreadystatechange = function(){
 
 
 
-### JQuery的ajax操作
+### JQuery的ajax操作 --> 返回jqXHR对象
 
 #### 你用的什么框架?
 
