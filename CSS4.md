@@ -132,3 +132,7 @@ float:right(left,none)
 2. relative:相对定位,没有脱离标准流
 3. absolute:绝对定位,脱离标准流(祖先元素无定位,相对于body;祖先元素有定位,相对于最近定位了的元素)
 4. fixed:固定,脱离了标准流(一般用于广告)
+
+#### z-index
+设置层级,只有在position:relative,absolute,fixed时生效
+
