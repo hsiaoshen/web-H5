@@ -67,6 +67,16 @@ E:nth-child
 
 ### 线性渐变
 
+```css
+ background:linear-gradient(to bottom, red 20%,white 40%,blue);
+ //必须要有方向和起始色和终止色
+```
 
+### 径向渐变
 
+```css
+   /* background-image: radial-gradient(100px at center,yellow 50%  , blue, red); */
+    background-image: radial-gradient(100px at left top,yellow 50%  , blue, red);
+    //要设置圆心和半径
+```
 
