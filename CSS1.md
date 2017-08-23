@@ -1,5 +1,12 @@
 # CSS样式
 
+## 兼容性写法
+
+-webkit-:safari,chrome等
+-moz-:mozilla
+-ms-:IE
+-o-:Opera
+
 ## CSS的作用
 1. 控制网页中元素的样式
 2. 将HTML结构和样式分离出来
