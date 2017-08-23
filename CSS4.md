@@ -1,5 +1,11 @@
 # 边框 内边距 外边距 盒子(要遵循上右下左的顺序)
 
+## box-sizing
+1. border-box
+2. padding-box
+3. content-box
+
+
 ## 边框 border
 
 ### 综合设置
