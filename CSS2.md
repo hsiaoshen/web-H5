@@ -33,6 +33,21 @@ font: font-style font-weight font-size/line-height font-family
 1. overline：上划线。
 1. line-through：删除线
 
+### 文本阴影 text-shadow
+
+```css
+text-shadow: 水平偏移量 垂直偏移量 模糊度 颜色(可设置透明度),水平偏移量 垂直偏移量 模糊度 颜色(可设置透明度);
+```
+注意:
+1. 水平偏移量 正值向右 负值向左。
+2. 垂直偏移量 正值向下 负值向上。
+3. 模糊度是不能为负值。
+4. 使用逗号分割可以设置多重效果。
+
+```css
+text-shadow: -1px -1px 1px #000,1px 1px 1px #FFF; //凹字体
+text-shadow: -1px -1px 1px #FFF,1px 1px 1px #000; //凸字体
+```
 
 
 ## 其他属性(一个汉字算一个字符)
