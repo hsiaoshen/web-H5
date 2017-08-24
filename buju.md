@@ -5,6 +5,37 @@
 
 ### 使用伸缩盒子
 
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>两栏布局(左固定，右适应)</title>
+  </head>
+  <style media="screen">
+    #main{
+      display: flex;
+    }
+    .left{
+      width: 200px;
+      height: 500px;
+      background-color: red;
+      flex-shrink: 0;
+    }
+    .right{
+      background-color: blue;
+      flex-grow: 1;
+      overflow: hidden;
+    }
+  </style>
+  <body>
+    <div id="main">
+      <div class="left">左边</div>
+      <div class="right">右边</div>
+    </div>
+  </body>
+</html>
+```
 
 
 ### 使用浮动
