@@ -100,4 +100,16 @@ transition-timeing-function:
 * step-end：等同于 steps(1, end)
 ***
 
+```css
+transition-property: border-color, background-color, color;
+transition-duration: .5s;
+transition-timing-function: ease-in;
+transition-delay: .1s;
+
+或者可以进行综合设置：
+transition: border-color 0.5s ease-in 0.1s,
+            background-color 0.5s ease-in 0.1,
+            color 0.5s ease-in 0.1;
+```
+
 
