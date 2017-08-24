@@ -42,6 +42,8 @@
 
 ### 使用浮动
 
+思路：父盒子设置width：100%和左浮动，左子盒子设置固定宽高并左浮动，右子盒子设置overflow：hidden形成BFC格局
+
 ```html
 <!DOCTYPE html>
 <html>
