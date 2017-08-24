@@ -234,3 +234,22 @@ body {
 * animation-direction 动画逆播，alternate(先正常再反向),reverse,alternate-reverse
 * animation-fill-mode 动画执行完毕后状态，forwards、backwards等
 * animation-iteration-count 动画执行次数，inifinate(无限循环)等
+
+## 媒体查询 media
+
+媒体查询可以让我们根据设备显示器的特性（如视口宽度、屏幕比例、设备方向：横向或纵向）为其设定CSS样式，媒体查询由媒体类型和一个或多个检测媒体特性的条件表达式组成。用媒体查询，可以在不改变页面内容的情况下，为特定的一些输出设备定制显示效果。
+
+```html
+<head>
+<meta name="viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+  <!-- 
+width=device-width:宽度等于当前设备的宽度
+initial-scale=1：初始的缩放比例（默认为1）
+maximum-scale=1：允许用户缩放到得最大比例（默认为1）
+user-scalable=no：用户不能手动缩放
+-->    
+  <style>
+     @media all(screen) with                                                 
+ </style>                                                                                               
+</head> 
+```
