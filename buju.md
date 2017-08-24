@@ -19,7 +19,7 @@
   <style media="screen">
   #main{
     background-color: green;
-    /*float: left;*/
+    float: left;
     width: 100%;
 }
 .left{
