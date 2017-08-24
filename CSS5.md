@@ -112,7 +112,7 @@ transition: border-color 0.5s ease-in 0.1s,
             color 0.5s ease-in 0.1;
 ```
 
-## 变换 tansform(坐标轴方向:X轴朝右,Y轴朝下)
+## 变换 transform(坐标轴方向:X轴朝右,Y轴朝下)
 
 ### 2D
 1. translate(x,y)  --> 移动位置相当于自身原来的位置
