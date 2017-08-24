@@ -239,6 +239,8 @@ body {
 
 媒体查询可以让我们根据设备显示器的特性（如视口宽度、屏幕比例、设备方向：横向或纵向）为其设定CSS样式，媒体查询由媒体类型和一个或多个检测媒体特性的条件表达式组成。用媒体查询，可以在不改变页面内容的情况下，为特定的一些输出设备定制显示效果。
 
+![常用属性](https://nts.newbieol.com/static/k111/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/class-012/image/media.jpg)
+
 ```html
 <head>
 <meta name="viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
