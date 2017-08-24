@@ -30,7 +30,7 @@
 
 计算:每个子盒子的固定长度 -  (每个自盒子的固定长度和 - 伸缩盒子的长度) / flex-shrink的值和 * 每个子盒子flex-shrink的值
 
-#### flex-basis
+#### flex-basis(flex子项的基准宽度)
 
 如果所有子元素的基准值之和大于剩余空间，则会根据每项设置的基准值，按比率伸缩剩余空间
 
@@ -38,21 +38,21 @@
 
 综合写法--> flex-flow: flex-direction flex-wrap
 
-#### flex-direction(定义弹性盒子元素的排列方向)
+#### flex-direction(定义弹性盒子元素的子元素排列方向)
 
 1. row：主轴与行内轴方向作为默认的书写模式。即横向从左到右排列（左对齐）。
 2. row-reverse：对齐方式与row相反。
 3. column：主轴与块轴方向作为默认的书写模式。即纵向从上往下排列（顶对齐）。
 4. column-reverse：对齐方式与column相反。
 
-#### flex-wrap(控制flex容器是单行或者多行，同时横轴的方向决定了新行堆叠的方向)
+#### flex-wrap(设置子元素是否允许换行)
 
 1. nowrap：flex容器为单行。该情况下flex子项可能会溢出容器
 2. wrap：flex容器为多行。该情况下flex子项溢出的部分会被放置到新行，子项内部会发生断行
 3. wrap-reverse：反转 wrap 排列。
 
 
-### aligin-content(只有一行时不会起效)
+### aligin-content(只有一行时不会起效,设置的主轴有换行的盒子的侧轴对齐)
 
 1. flex-start：
 各行向弹性盒容器的起始位置堆叠。弹性盒容器中第一行的侧轴起始边界紧靠住该弹性盒容器的侧轴起始边界，之后的每一行都紧靠住前面一行。
@@ -68,10 +68,14 @@
 各行将会伸展以占用剩余的空间。如果剩余的空间是负数，该值等效于'flex-start'。在其它情况下，剩余空间被所有行平分，以扩大它们的侧轴尺寸。
 
 
-### aligin-items,aligin-self(侧轴上的对齐方式)
+### aligin-items(侧轴上的对齐),aligin-self(子元素自身的侧轴上对齐方式)
 
 
 ### justify-content(主轴的对齐方式)
+
+### order (设置子元素的排列顺序)
+
+根据设置order的值的大小来排序,值小的在前面
 
 ## react
 
