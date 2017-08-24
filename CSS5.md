@@ -242,11 +242,11 @@ body {
 ```html
 <head>
 <meta name="viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
-      <!-- width=device-width:宽度等于当前设备的宽度
+       <!-- width=device-width:宽度等于当前设备的宽度
       initial-scale=1：初始的缩放比例（默认为1）
       maximum-scale=1：允许用户缩放到得最大比例（默认为1）
-      user-scalable=no：用户不能手动缩放-->                                                                                                 
-  <style>
+      user-scalable=no：用户不能手动缩放-->                                                                                                
+<style>
      @media all and (min-width:500px) and (max-width:1000px){
     body{
         color:#f00;
@@ -279,7 +279,7 @@ body {
         content: "横屏";
         color: red;
     }
-}                                              
-  </style>                                                                                               
+} 
+</style>                                                                                               
 </head> 
 ```
