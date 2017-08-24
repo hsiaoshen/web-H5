@@ -56,7 +56,7 @@ E:nth-child
 3.E:before/E::before
 4.E:after/E::after
 
-## 渐变
+## 渐变(gradient)
 
 用来代替图片的
 
@@ -65,14 +65,14 @@ E:nth-child
 1. 加快页面加载时间，减少带宽占用
 2. 渐变是由浏览器生成的，缩放效果比图片好，使用更灵活
 
-### 线性渐变
+### 线性渐变(linear-gradient)
 
 ```css
  background:linear-gradient(to bottom, red 20%,white 40%,blue);
  //必须要有方向和起始色和终止色
 ```
 
-### 径向渐变
+### 径向渐变(radial-gradient)
 
 ```css
    /* background-image: radial-gradient(100px at center,yellow 50%  , blue, red); */
@@ -80,7 +80,7 @@ E:nth-child
     //要设置圆心和半径
 ```
 
-## 过渡
+## 过渡(transition)
 
 特点：当前元素只要有“属性”发生变化时，可以平滑的进行过渡。
 
@@ -112,7 +112,7 @@ transition: border-color 0.5s ease-in 0.1s,
             color 0.5s ease-in 0.1;
 ```
 
-## 变换(坐标轴方向:X轴朝右,Y轴朝下)
+## 变换 tansform(坐标轴方向:X轴朝右,Y轴朝下)
 
 ### 2D
 1. translate(x,y)  --> 移动位置相当于自身原来的位置
