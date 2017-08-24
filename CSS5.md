@@ -213,3 +213,24 @@ body {
 
 1. visible：指定元素背面可见，允许显示正面的镜像。
 2. hidden：指定元素背面不可见
+
+
+## 动画 animation
+
+创建动画并应用在元素上:
+
+1. 通过@keyframes指定动画序列
+2. 通过百分比将动画序列分割成多个节点
+3. 在各节点中分别定义各属性
+4. 通过animation将动画应用于相应元素
+
+### 常用属性
+
+* animation-name 设置动画序列名称
+* animation-duration 动画持续时间
+* animation-delay 动画延时时间
+* animation-timing-function 动画执行速度，linear、ease,ease-in,ease-in-out等
+* animation-play-state 动画播放状态，play、paused,running等
+* animation-direction 动画逆播，alternate(先正常再反向),reverse,alternate-reverse
+* animation-fill-mode 动画执行完毕后状态，forwards、backwards等
+* animation-iteration-count 动画执行次数，inifinate(无限循环)等
