@@ -115,7 +115,7 @@ transition: border-color 0.5s ease-in 0.1s,
 ## 变换 transform(坐标轴方向:X轴朝右,Y轴朝下)
 
 ### 2D
-1. translate(x,y)  --> 移动位置相当于自身原来的位置
+1. translate(x,y)  --> 移动位置相当于自身原来的位置,若果设置百分比,那么是相对于自身宽高的百分比移动的
 2. scale(x,y) --> 可以对元素进行水平和垂直方向的缩放
 3. rotate(deg)  --> 可以对元素进行旋转，正值为顺时针，负值为逆时针
 4.  skew(deg, deg) --> 可以使元素按一定的角度进行倾斜
