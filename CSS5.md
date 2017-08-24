@@ -80,3 +80,24 @@ E:nth-child
     //要设置圆心和半径
 ```
 
+## 过渡
+
+特点：当前元素只要有“属性”发生变化时，可以平滑的进行过渡。
+
+1. transition-property 设置过渡属性
+2. transition-duration 设置过渡时间
+3. transition-timing-function 设置过渡速度
+4. transition-delay 设置过渡延时
+
+***
+transition-timeing-function:
+* linear：线性过渡。等同于贝塞尔曲线(0.0, 0.0, 1.0, 1.0)
+* ease：平滑过渡。等同于贝塞尔曲线(0.25, 0.1, 0.25, 1.0)
+* ease-in：由慢到快。等同于贝塞尔曲线(0.42, 0, 1.0, 1.0)
+* ease-out：由快到慢。等同于贝塞尔曲线(0, 0, 0.58, 1.0)
+* ease-in-out：由慢到快再到慢。等同于贝塞尔曲线(0.42, 0, 0.58, 1.0)
+* step-start：等同于 steps(1, start)
+* step-end：等同于 steps(1, end)
+***
+
+
