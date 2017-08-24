@@ -121,4 +121,85 @@ transition: border-color 0.5s ease-in 0.1s,
 4. skew(deg, deg) --> 可以使元素按一定的角度进行倾斜
 
 
+### 3D
 
+1. 移动 translate3d(value,value,value) 可以改变元素的位置.
+2. 缩放 scale3d(x, y, z), scaleX(x) .
+3. 旋转 rotate3d(x,y,z,deg), rotateX(deg) 可以对元素进行旋转.
+4. 倾斜 skew(deg, deg),skewX(deg) ,skewY(deg)可以使元素按一定的角度进行倾斜
+
+### transform-origin
+
+设置原点坐标
+
+### transform-style
+
+设置从视觉效果来看是3d还是平面
+
+1. flat：指定子元素位于此元素所在平面内
+2. preserve-3d：指定子元素定位在三维空间内
+
+立体的
+```html
+<style>
+body {
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+}
+.cube {
+    position: relative;
+    font-size: 80px;
+    width: 2em;
+    margin: 1.5em auto;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform: rotateX(-30deg) rotateY(30deg);
+    transform: rotateX(-30deg) rotateY(30deg);
+}
+.cube > div {
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    background: rgba(0, 0, 0, .1);
+    border: 1px solid #999;
+    color: white;
+    text-align: center;
+    line-height: 2em;
+}
+.front {
+    -webkit-transform: translateZ(1em);
+    transform: translateZ(1em);
+}
+.top {
+    -webkit-transform: rotateX(90deg) translateZ(1em);
+    transform: rotateX(90deg) translateZ(1em);
+}
+.right {
+    -webkit-transform: rotateY(90deg) translateZ(1em);
+    transform: rotateY(90deg) translateZ(1em);
+}
+.left {
+    -webkit-transform: rotateY(-90deg) translateZ(1em);
+    transform: rotateY(-90deg) translateZ(1em);
+}
+.bottom {
+    -webkit-transform: rotateX(-90deg) translateZ(1em);
+    transform: rotateX(-90deg) translateZ(1em);
+}
+.back {
+    -webkit-transform: rotateY(-180deg) translateZ(1em);
+    transform: rotateY(-180deg) translateZ(1em);
+}
+</style>
+</head>
+<body>
+<div class="cube">
+    <div class="front">1</div>
+    <div class="back">2</div>
+    <div class="right">3</div>
+    <div class="left">4</div>
+    <div class="top">5</div>
+    <div class="bottom">6</div>
+</div>
+</body>
+```
