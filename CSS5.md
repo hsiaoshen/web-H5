@@ -242,14 +242,44 @@ body {
 ```html
 <head>
 <meta name="viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
-  <!-- 
-width=device-width:宽度等于当前设备的宽度
-initial-scale=1：初始的缩放比例（默认为1）
-maximum-scale=1：允许用户缩放到得最大比例（默认为1）
-user-scalable=no：用户不能手动缩放
--->    
+      <!-- width=device-width:宽度等于当前设备的宽度
+      initial-scale=1：初始的缩放比例（默认为1）
+      maximum-scale=1：允许用户缩放到得最大比例（默认为1）
+      user-scalable=no：用户不能手动缩放-->                                                                                                 
   <style>
-     @media all(screen) with                                                 
- </style>                                                                                               
+     @media all and (min-width:500px) and (max-width:1000px){
+    body{
+        color:#f00;
+    }
+    div {
+        color: red;
+    }
+}
+
+@media screen and (max-width:300px) {
+    body {
+        color: yellow;
+    }
+}
+
+
+@media all and (min-height:300px) and (max-height:500px){
+    body{color:#f00;}
+}
+
+
+@media screen and (orientation: portrait){
+    .test::after {
+        content: "竖屏";
+        color: red;
+    }
+}
+@media screen and (orientation: landscape){
+    .test::after {
+        content: "横屏";
+        color: red;
+    }
+}                                              
+  </style>                                                                                               
 </head> 
 ```
