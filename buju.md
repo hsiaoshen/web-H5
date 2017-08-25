@@ -177,3 +177,126 @@
       <div class="right">右</div>
     </div>
 ```
+
+### 圣杯布局
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>圣杯布局</title>
+    <style>
+    #hd{
+        height:50px;
+        background: #666;
+        text-align: center;
+    }
+    #bd{
+        /*左右栏通过添加负的margin放到正确的位置了，此段代码是为了摆正中间栏的位置*/
+        padding:0 200px 0 180px;
+        height:100px;
+    }
+    #middle{
+        float:left;
+        width:100%;/*左栏上去到第一行*/
+        height:100px;
+        background:blue;
+    }
+    #left{
+        float:left;
+        width:180px;
+        height:100px;
+        margin-left:-100%;
+        background:#0c9;
+        /*中间栏的位置摆正之后，左栏的位置也相应右移，通过相对定位的left恢复到正确位置*/
+        position:relative;
+        left:-180px;
+    }
+    #right{
+        float:left;
+        width:200px;
+        height:100px;
+        margin-left:-200px;
+        background:#0c9;
+        /*中间栏的位置摆正之后，右栏的位置也相应左移，通过相对定位的right恢复到正确位置*/
+        position:relative;
+        right:-200px;
+    }
+    #footer{
+        height:50px;
+        background: #666;
+        text-align: center;
+    }
+</style>
+  </head>
+  <body>
+    <div id="hd">header</div>
+    <div id="bd">
+        <div id="middle">middle</div>
+        <div id="left">left</div>
+        <div id="right">right</div>
+    </div>
+    <div id="footer">footer</div>
+  </body>
+</html>
+```
+### 双飞翼布局
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>双飞翼三栏布局</title>
+    <style>
+#hd{
+    height:50px;
+    background: #666;
+    text-align: center;
+}
+#middle{
+    float:left;
+    width:100%;/*左栏上去到第一行*/
+    height:100px;
+    background:blue;
+}
+#left{
+    float:left;
+    width:180px;
+    height:100px;
+    margin-left:-100%;
+    background:#0c9;
+}
+#right{
+    float:left;
+    width:200px;
+    height:100px;
+    margin-left:-200px;
+    background:#0c9;
+}
+
+/*给内部div添加margin，把内容放到中间栏，其实整个背景还是100%*/
+#inside{
+    margin:0 200px 0 180px;
+    height:100px;
+}
+#footer{
+   clear:both; /*记得清楚浮动*/
+   height:50px;
+   background: #666;
+   text-align: center;
+}
+</style>
+  </head>
+  <body>
+      <div id="hd">header</div>
+  <div id="middle">
+  <div id="inside">middle</div>
+  </div>
+  <div id="left">left</div>
+  <div id="right">right</div>
+  <div id="footer">footer</div>
+  </body>
+</html>
+```
