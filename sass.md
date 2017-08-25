@@ -67,3 +67,49 @@ $headings: (h1: 2em, h2: 1.5em, h3: 1.2em);
   }
 }
 ```
+### 嵌套
+
+#### 选择器嵌套(& 代表父元素选择器)
+
+```html
+//sass style
+//-------------------------------
+#top_nav{
+  line-height: 40px;
+  text-transform: capitalize;
+  background-color:#333;
+  li{
+    float:left;
+  }
+  a{
+    display: block;
+    padding: 0 10px;
+    color: #fff;
+
+    &:hover{
+      color:#ddd;
+    }
+  }
+}
+
+//css style
+//-------------------------------
+#top_nav{
+  line-height: 40px;
+  text-transform: capitalize;
+  background-color:#333;
+}  
+#top_nav li{
+  float:left;
+}
+#top_nav a{
+  display: block;
+  padding: 0 10px;
+  color: #fff;
+}
+#top_nav a:hover{
+  color:#ddd;
+}
+
+```
+
