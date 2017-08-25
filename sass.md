@@ -203,3 +203,23 @@ sass中使用@mixin声明混合，可以传递参数，参数名以$符号开始
   @include opacity(80);
 }
 ```
+#### 多个参数
+
+注意：
+1. 若传参数时有的没有传参该值为默认值
+2. 若传参个数多于设定参数个数会出错
+
+
+```scss
+@mixin horizontal-line($border:1px dashed #ccc, $padding:10px){
+    border-bottom:$border;
+    padding-top:$padding;
+    padding-bottom:$padding;  
+}
+.imgtext-h li{
+    @include horizontal-line(1px solid #ccc);
+}
+.imgtext-h--product li{
+    @include horizontal-line($padding:15px);
+}
+```
