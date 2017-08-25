@@ -157,4 +157,19 @@ $headings: (h1: 2em, h2: 1.5em, h3: 1.2em);
 }
 }
 ```
+#### @at-root 和&的结合使用
+
+```html
+.child{
+    @at-root .parent &{
+        color:#f00;
+    }
+}
+
+//css style
+//-------------------------------
+.parent .child {
+  color: #f00;
+}
+```
 
