@@ -57,3 +57,13 @@ $ptwo:5px 10px,15px 20px;
   font-size: nth(nth($ptwo,2),1);   //15px
 }
 ```
+#### 键值对(map )
+
+```scss
+$headings: (h1: 2em, h2: 1.5em, h3: 1.2em);
+@each $header, $size in $headings {
+  #{$header} {
+    font-size: $size;
+  }
+}
+```
