@@ -147,3 +147,33 @@
     <div class="center">中间</div>
 </div>
 ```
+
+### 伸缩篇
+
+```html
+    #main{
+      display: flex;
+    }
+    .left,.right{
+      width: 200px;
+      height: 500px;
+      flex-shrink: 0;
+    }
+    .left{
+      background-color: red;
+    }
+    .center{
+      width: 200px;
+      flex-grow: 1;
+      background-color: green;
+      overflow: hidden;
+    }
+    .right{
+      background-color: blue;
+    }
+    <div id="main">
+      <div class="left">左</div>
+      <div class="center">中</div>
+      <div class="right">右</div>
+    </div>
+```
