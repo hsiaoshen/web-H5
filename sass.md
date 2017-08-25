@@ -129,3 +129,32 @@ $headings: (h1: 2em, h2: 1.5em, h3: 1.2em);
   }
 }
 ```
+
+#### 跳出选择器嵌套(跳出所有上级选择器嵌套) @at-root
+
+1. 单个选择器嵌套跳出
+
+```scss
+.parent-2 {
+  color:#f00;
+  @at-root .child {
+    width:200px;
+  }
+}
+```
+2. 多个选择器嵌套跳出
+
+```scss
+.parent-1 {
+  color:#f00;
+  @at-root {
+  .child1 {
+    width:100px;
+  }
+  .child2{
+    height:500px;
+  }
+}
+}
+```
+
