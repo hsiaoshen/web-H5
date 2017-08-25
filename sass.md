@@ -172,4 +172,34 @@ $headings: (h1: 2em, h2: 1.5em, h3: 1.2em);
   color: #f00;
 }
 ```
+### 混合 @mixin(使用@include 名字)
 
+sass中使用@mixin声明混合，可以传递参数，参数名以$符号开始，多个参数以逗号分开，也可以给参数设置默认值。声明的@mixin通过@include来调用。
+
+#### 无参数
+
+```scss
+@mixin center-block {
+    margin-left:auto;
+    margin-right:auto;
+}
+.demo{
+    @include center-block;
+}
+```
+#### 1个参数
+
+```scss
+@mixin opacity($opacity:50) {
+  opacity: $opacity / 100;
+  filter: alpha(opacity=$opacity);
+}
+//不输入参数，使用默认值
+.demo{
+@include opacity;
+}
+// 传参数
+.demo1{
+  @include opacity(80);
+}
+```
