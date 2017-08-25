@@ -112,4 +112,20 @@ $headings: (h1: 2em, h2: 1.5em, h3: 1.2em);
 }
 
 ```
+#### 属性嵌套
 
+```scss
+.fakeshadow {
+  border: {
+    style: solid;
+    left: {
+      width: 4px;
+      color: #888;
+    }
+    right: {
+      width: 2px;
+      color: #ccc;
+    }
+  }
+}
+```
