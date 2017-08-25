@@ -37,14 +37,14 @@ sass的变量必须是$开头，后面紧跟变量名，而变量值和变量名
 
 默认值会被同一个变量的其他值覆盖掉，默认变量的价值在进行组件化开发的时候会非常有用。
 
-#### 多变量(list,使用nth($val,$index))
+#### 多变量(list,使用nth($val,$index),index从1开始)
 
 一维数据
 ```scss
 $p: 5px 10px 20px 30px;
 
 .one{
-  font-size: nth($p,2);
+  font-size: nth($p,2);  //10px
 }
 ```
 
@@ -54,6 +54,6 @@ $p: 5px 10px 20px 30px;
 $ptwo:5px 10px,15px 20px;
 
 .two{
-  font-size: nth(nth($ptwo,2),1);
+  font-size: nth(nth($ptwo,2),1);   //15px
 }
 ```
