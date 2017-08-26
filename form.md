@@ -60,7 +60,9 @@ search - 搜索域，语义化，表示定义搜索框
 3. disabled: 控件禁止
 4. readonly:只读
 5. maxlength:可输入的最大值
-6. placehoder: 
+6. placehoder
+7. form:可以把一个不在form表单中的input作为form表单的input的提交，值为form表单的id
+8. autofocus:设置当前文本域页面加载完了过后自动得到焦点
 
 ### textarea(文本域)
 
