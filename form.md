@@ -62,14 +62,17 @@ search - 搜索域，语义化，表示定义搜索框
 3. disabled: 控件禁止
 4. readonly:只读
 5. maxlength:可输入的最大值
-6. placehoder
+6. placehoder：占位符
 7. form:可以把一个不在form表单中的input作为form表单的input的提交，值为form表单的id
 8. autofocus:设置当前文本域页面加载完了过后自动得到焦点
 9. formaction:submit属性,会覆盖原来的action向指定的action提交表单
 10. formenctype：带submit属性，改变编码方式
 11. formnovalidate:设置了之后不进行验证就提交
 12. formtarget:提交到哪里，是新窗口还是当前窗口
-
+13. min / max / step:min max 限制值的范围，但是不会再输入时限制,提交时校验;step设置的是每次加减的增量主要使用在number range datepicker上
+14. multiple 文本域的多选
+15. pattern:设置匹配格式(正则)
+16. required:必填
 ### textarea(文本域)
 
 ```html
