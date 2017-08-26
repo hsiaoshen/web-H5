@@ -227,3 +227,21 @@ sass中使用@mixin声明混合，可以传递参数，参数名以$符号开始
 #### 多组参数
 
 多组参数在参数名后面加3个点
+
+
+#### @mixin 和@content的结合使用
+
+```scss
+@mixin max-screen($res){
+  @media only screen and ( max-width: $res )
+  {
+    @content;
+  }
+}
+
+@include max-screen(480px) {
+  body { color: red }
+}
+```
+@include加载了@media,而且用引入的样式替换了@content
+
