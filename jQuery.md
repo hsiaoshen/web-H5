@@ -20,3 +20,17 @@
 5. 与Ajax技术的完美结合
 6. 为页面添加动态效果：为了实现某种交互式行为,设计者也必须向用户提供视觉上的反馈，如渐进进出等
 7. 简化常见的JavaScript任务:对数据结构的操作
+
+## 二种引入jQuery的方式
+
+1. 下载好jQuery文件，使用<script>引入
+  
+```html
+  <script language="javascript" type="text/javascript"
+src="js/jquery.js" > </script>
+```
+
+2. 使用CDN
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+
