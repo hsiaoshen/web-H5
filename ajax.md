@@ -209,3 +209,7 @@ error:请求失败的回调函数,
 complete:请求完成执行的回调函数(无论成功或失败都执行),global:是否触发全局 AJAX 事件(默认值: true。设置为 false 将不会触发全局 AJAX 事件，如 ajaxStart 或 ajaxStop 可用于控制不同的 Ajax 事件),
 ).done(funcion(){})
 ```
+
+
+## fetch:是一门新型的数据交互技术，是由ajax发展而来的
+
