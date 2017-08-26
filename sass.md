@@ -223,3 +223,7 @@ sass中使用@mixin声明混合，可以传递参数，参数名以$符号开始
     @include horizontal-line($padding:15px);
 }
 ```
+
+#### 多组参数
+
+多组参数在参数名后面加3个点
