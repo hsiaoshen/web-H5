@@ -13,6 +13,8 @@
 1. action: 用于指定接收并处理表单数据的服务器程序的url地址
 2. method: 用于设置表单数据的提交方式,get/post
 3. name: 用于定义指定表单的名称,以便区分同一个页面的多个表单
+4. autocomplete:设置整个表单是否开启自动完成 on|off
+5. novalidate:设置H5的表单校验是否工作 true 不工作不加该属性代表校验
 
 
 ## 控件
@@ -63,7 +65,9 @@ search - 搜索域，语义化，表示定义搜索框
 6. placehoder
 7. form:可以把一个不在form表单中的input作为form表单的input的提交，值为form表单的id
 8. autofocus:设置当前文本域页面加载完了过后自动得到焦点
-9. formaction:button属性,会覆盖原来的action向指定的action提交表单
+9. formaction:submit属性,会覆盖原来的action向指定的action提交表单
+10. formenctype：带submit属性，改变编码方式
+11. formnovalidate:设置了之后不进行验证就提交
 
 ### textarea(文本域)
 
