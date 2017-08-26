@@ -63,6 +63,7 @@ search - 搜索域，语义化，表示定义搜索框
 6. placehoder
 7. form:可以把一个不在form表单中的input作为form表单的input的提交，值为form表单的id
 8. autofocus:设置当前文本域页面加载完了过后自动得到焦点
+9. formaction:button属性,会覆盖原来的action向指定的action提交表单
 
 ### textarea(文本域)
 
