@@ -68,6 +68,7 @@ search - 搜索域，语义化，表示定义搜索框
 9. formaction:submit属性,会覆盖原来的action向指定的action提交表单
 10. formenctype：带submit属性，改变编码方式
 11. formnovalidate:设置了之后不进行验证就提交
+12. formtarget:提交到哪里，是新窗口还是当前窗口
 
 ### textarea(文本域)
 
