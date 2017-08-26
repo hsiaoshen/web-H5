@@ -269,3 +269,14 @@ PS:在@media中暂时不能@extend @media外的代码片段
 #### 常用颜色函数
 
 以lighten减淡和darken加深为最，其调用方法为lighten($color,$amount)和darken($color,$amount)
+
+
+### @if和@else
+
+### 三目运算
+
+语法为：if($condition, $if_true, $if_false) 。三个参数分别表示：条件，条件为真的值，条件为假的值。
+
+### for循环
+
+for循环有两种形式，分别为：@for $i from through 和@for $var from to 。$i表示变量，start表示起始值，end表示结束值，这两个的区别是关键字through表示包括end这个数，而to则不包括end这个数。
