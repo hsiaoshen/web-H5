@@ -172,7 +172,7 @@ $headings: (h1: 2em, h2: 1.5em, h3: 1.2em);
   color: #f00;
 }
 ```
-### 混合 @mixin(使用@include 名字)
+### 混合 @mixin(使用@include 名字  --> 解析是通过拷贝形式)
 
 sass中使用@mixin声明混合，可以传递参数，参数名以$符号开始，多个参数以逗号分开，也可以给参数设置默认值。声明的@mixin通过@include来调用。
 
