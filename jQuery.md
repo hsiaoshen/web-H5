@@ -1,4 +1,6 @@
-JQuery
+# JQuery
+
+[jQuery中文文档手册](http://www.css88.com/jqapi-1.9/)
 
 ## 什么是JQuery？
 
