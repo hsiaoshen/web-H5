@@ -277,6 +277,36 @@ PS:在@media中暂时不能@extend @media外的代码片段
 
 语法为：if($condition, $if_true, $if_false) 。三个参数分别表示：条件，条件为真的值，条件为假的值。
 
-### for循环
+```scss
+p{
+  font-size: if(true, 1px, 2px);
+}
+
+```
+
+### @for循环
 
 for循环有两种形式，分别为：@for $i from through 和@for $var from to 。$i表示变量，start表示起始值，end表示结束值，这两个的区别是关键字through表示包括end这个数，而to则不包括end这个数。
+
+### @each循环
+
+@each $var in 。其中$var表示变量，而list和map表示list类型数据和map类型数据
+
+#### 单字段list
+
+@ each $变量名 in list
+
+#### 多字段list
+
+@each $变量名1,$变量名2,$变量名3 in list
+
+```scss
+$animal-data: (puma, black, default),(sea-slug, blue, pointer),(egret, white, move);
+@each $animal, $color, $cursor in $animal-data {
+  .#{$animal}-icon {
+    background-image: url('/images/#{$animal}.png');
+    border: 2px solid $color;
+    cursor: $cursor;
+  }
+}
+```
