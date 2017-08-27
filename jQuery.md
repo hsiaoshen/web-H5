@@ -97,5 +97,11 @@ src="js/jquery.js" > </script>
 
 注意：如果是在该元素的内部最后选中本来存在的元素添加，那么相当于从原来位置移动走了，而不是赋复制
 
+可以使用回调函数动态插入元素
 
+```html
+$('div').append(function(index, html){
+  return ($('p'));
+});
+```
 
