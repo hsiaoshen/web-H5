@@ -2,16 +2,18 @@
 
 ## 如果$与其他库的冲突怎么解决？
 
-首先引用写在其他库的后面
+
 
 有以下几种方法:
 
-前提：jQuery.noConflict() --> 移交$控制权，使其他可以使用$
+前提：首先引用写在其他库的后面,jQuery.noConflict() --> 移交$控制权，使其他可以使用$
 
 1. 直接使用jQuery来代替$使用，就是写起来不方便
 2. 传参式:
 ```scrpipt
-jQuery(function($))
+jQuery.noConflict();
+jQuery(function($){
+});
 ```
 3. 定义新的快捷方式
 
@@ -19,6 +21,55 @@ jQuery(function($))
 var $j = jQuery.noConflict();
 $j(function(){})
 ```
+
+4. 匿名函数式:好处是能让$让多个库使用(还能避免js库导入顺序不清楚时产生的冲突)
+
+```script
+jQuery.noConflict();
+(function($){
+})(jQuery)；
+
+```
+### 实现原理
+
+```script
+var
+// Map over jQuery in case of overwrite
+_jQuery = window.jQuery,
+
+// Map over the $ in case of overwrite
+_$ = window.$,
+
+jQuery.extend({
+    noConflict: function( deep ) {
+            if ( window.$ === jQuery ) {
+                window.$ = _$;
+            }
+
+            if ( deep && window.jQuery === jQuery ) {
+                window.jQuery = _jQuery;
+            }
+
+            return jQuery;
+        }
+});
+```
+
+描述:
+
+在jQuery加载的时候，通过事先声明的_jQuery变量获取到当前window.jQuery，通过_$获取到当前window.$。
+
+通过jQuery.extend()把noConflict挂载到jQuery下面。所以我们在调用的时候都是jQuery.noConflict()这样调。
+
+在调用noConflict()时做了2个判断，
+
+第一个if，把$的控制权交出去。
+
+第二个if，在noConflict()传参的时候把，jQuery的控制权交出去。
+
+最后noConflict()返回jQuery对象，用哪个参数接收，哪个参数将拥有jQuery的控制权。
+
+
 ## $的作用
 
 是jQuery的简写，是代码书写简单，优雅。常见作用有:
