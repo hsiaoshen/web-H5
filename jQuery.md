@@ -1,5 +1,24 @@
 # JQuery
 
+## 如果$与其他库的冲突怎么解决？
+
+首先引用写在其他库的后面
+
+有以下几种方法:
+
+前提：jQuery.noConflict() --> 移交$控制权，使其他可以使用$
+
+1. 直接使用jQuery来代替$使用，就是写起来不方便
+2. 传参式:
+```scrpipt
+jQuery(function($))
+```
+3. 定义新的快捷方式
+
+```script
+var $j = jQuery.noConflict();
+$j(function(){})
+```
 ## $的作用
 
 是jQuery的简写，是代码书写简单，优雅。常见作用有:
