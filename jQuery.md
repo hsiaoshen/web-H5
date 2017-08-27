@@ -10,7 +10,12 @@
 2. window.onload不能同时编写多个，如果有多个window.onload方法，只会执行一个。$(document).ready()可以同时编写多个，并且都可以得到执行
 3. window.onload没有简化写法，$(document).ready(function(){})可以简写成$(function(){})
 
-注意: 如果需要所有资源要加载完毕就要用到$(window).load(function() {})
+注意: 如果需要所有资源要加载完毕就要用到$(window).load(function() {}),既能在所有资源加载完毕后再执行js代码，又能编写多个
+
+
+## jquery的$(document).ready()和onload的加载顺序
+
+IE只有在页面不是嵌入frame中的情况下才和Firefox等一样，先执行$(document).ready()的内容，再执行原来的onload方法。对于嵌入frame中的页面，也只是绑定在load事件上执行，所以自然是在原来的onload绑定的方法执行之后才轮到$(document).ready()的内容
 
 
 
