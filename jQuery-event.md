@@ -21,9 +21,9 @@ jQuery.holdReady( hold )   --> hold是布尔类型
 ### ready
 
 
-## 事件的绑定
+## 事件的绑定和移除
 
-### .on()
+### .on()  绑定
 
 ```
 .on( events [, selector ] [, data ], handler(eventObject) )
@@ -35,3 +35,8 @@ jQuery.holdReady( hold )   --> hold是布尔类型
 2. selector:一个选择器字符串，用于过滤出被选中的元素中能触发事件的后代元素（this就是指向该后代元素）。如果选择器是 null 或者忽略了该选择器，那么被选中的元素总是能触发事件。
 3. data:交给处理函数的参数
 4. handle(eventobject) --> 若是为了阻止浏览器的默认行为，直接写false
+
+### .off()  移除
+
+1. .off() --> 移除选定元素的所有事件
+2. .off( events [, selector ] [, handler ] ) --》 移除了handler的绑定事件
