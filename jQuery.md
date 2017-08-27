@@ -103,5 +103,8 @@ src="js/jquery.js" > </script>
 $('div').append(function(index, html){
   return ($('p'));
 });
+
+//index: 是元素的索引值.
+//html: 是元素的内容.
 ```
 
