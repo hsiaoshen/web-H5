@@ -86,4 +86,5 @@ src="js/jquery.js" > </script>
 #### 创建元素
 
 1. $('<p>')  --> 创建了一个p元素
-2. document.createElement("span")  
+2. document.createElement("span") 
+3. .clone()  --> 深度复制所有匹配的元素集合，包括所有匹配元素、匹配元素的下级元素、文字节点
