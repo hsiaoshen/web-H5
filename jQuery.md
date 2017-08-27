@@ -113,4 +113,8 @@ $('div').append(function(index, html){
 
 区别：
 
-wrap()是在满足集合的每个元素外面包裹一层HTML结构；wrapAll()是在满足集合的所有元素外面包裹一层HTML结构；wrapInner()是在满足集合的每个元素的内容外部包裹一层HTML结构
+wrap()是在满足集合的每个元素外面包裹一层HTML结构；wrapAll()是在满足集合的所有元素外面包裹一层HTML结构；wrapInner()是在满足集合的每个元素的内容外部包裹一层HTML结构(最内层只有一个元素)
+
+#### .after('要插入的元素'),.insertAfter('目标元素')
+
+在一个元素后面加一个兄弟元素
