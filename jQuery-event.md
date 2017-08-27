@@ -42,3 +42,7 @@ jQuery.holdReady( hold )   --> hold是布尔类型
 2. .off( events [, selector ] [, handler ] ) --》 移除了handler的绑定事件
 3. $("body").off("click", "p", foo);   --> 移除绑定事件的指定处理函数foo
 4. $("p").off( "click", "**" )    -->   移除绑定事件的所有处理函数
+
+### .on 只触发一次的绑定
+
+和.on差不多，就是绑定的事件只会触发一次
