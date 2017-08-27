@@ -118,3 +118,8 @@ wrap()是在满足集合的每个元素外面包裹一层HTML结构；wrapAll()�
 #### .after('要插入的元素'),.insertAfter('目标元素')
 
 在一个元素后面加一个兄弟元素
+
+#### .before(),.insertBefore()
+
+在一个元素前面加一个兄弟元素
+
