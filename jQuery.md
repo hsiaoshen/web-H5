@@ -33,4 +33,20 @@ src="js/jquery.js" > </script>
 2. 使用CDN
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 
+## 基本使用
+
+### 选择器
+
+1. .find() --> 查询后代元素
+2. .next() --> 同级相邻的下一个元素
+3. .prev() --> 同级的上一个元素
+4. .prevAll() --> 同级的上面所有元素
+5. .siblings() --> 同级的所有兄弟元素
+
+### 正则匹配
+
+1. ^ --> 从开头开始匹配
+2. $ --> 从结尾开始匹配
+
+
 
