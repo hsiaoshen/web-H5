@@ -80,3 +80,10 @@ src="js/jquery.js" > </script>
 19. :submit	选择提交按钮 (input[type=submit])或者(button[type=submit])
 20. :text	选择文本输入框元素 (input[type=text])
 21. :visible	选择可见的元素
+
+### DOM操作
+
+#### 创建元素
+
+1. $('<p>')  --> 创建了一个p元素
+2. document.createElement("span")  
