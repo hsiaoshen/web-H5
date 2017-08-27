@@ -56,3 +56,27 @@ src="js/jquery.js" > </script>
 3. :odd --> 匹配上下文中的奇数元素
 4. :eq(n) --> 从0开始计数，第n个元素
 5. :nth-child(n) --> 从1计数，第n个子元素
+
+### 过滤器
+
+1. :animated	选择处于动画状态的元素
+2. :button	选择按钮元素(包括input[type=submit], input[type=reset], input[type=button]和button)
+3. :checkbox	选择复选框元素(input[type=checkbox])
+4. :contains(food)	选择包含文本food的元素
+5. :disabled	选择处于禁用状态的元素
+6. :enabled	选择处于启用状态的元素
+7. :file	选择文件输入元素(input[type=file])
+8. :has(selector)	选择至少包含一个匹配指定选择器的元素的元素
+9. :header	选择标题元素, 比如<h1> ~ <h6>
+10. :hidden	选择隐藏元素
+11. :image	选择图片输入元素(input[type=image])
+12. :input	选择表单元素(input, select, textarea, button)
+13. :not(selector)	选择不匹配指定选择器的元素
+14. :parent	选择有子节点(包含文本)的元素, 空元素除外
+15. :password	选择口令元素(input[type=password])
+16. :radio	选择单选框元素(input[type=radio])
+17. :reset	选择重置按钮元素(input[type=reset])或者(button[type=reset])
+18. :selected	选择列表中处于选中状态的元素
+19. :submit	选择提交按钮 (input[type=submit])或者(button[type=submit])
+20. :text	选择文本输入框元素 (input[type=text])
+21. :visible	选择可见的元素
