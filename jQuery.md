@@ -1,5 +1,19 @@
 # JQuery
 
+## $(function(){})和 $(document).ready()的作用？
+
+保证页面结构加载完毕后再执行js代码
+
+## $(document).ready() 和 window.onload()的区别
+
+1. window.onload必须等到页面内包括图片的所有元素加载完毕后才能执行。$(document).ready()是DOM结构绘制完毕后就执行，不必等到加载完毕。 
+2. window.onload不能同时编写多个，如果有多个window.onload方法，只会执行一个。$(document).ready()可以同时编写多个，并且都可以得到执行
+3. window.onload没有简化写法，$(document).ready(function(){})可以简写成$(function(){})
+
+注意: 如果需要所有资源要加载完毕就要用到$(window).load(function() {})
+
+
+
 [jQuery中文文档手册](http://www.css88.com/jqapi-1.9/)
 
 ## 什么是JQuery？
