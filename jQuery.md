@@ -123,3 +123,9 @@ wrap()是在满足集合的每个元素外面包裹一层HTML结构；wrapAll()�
 
 在一个元素前面加一个兄弟元素
 
+
+#### .replaceWith()和.replaceAll()
+
+$(traget).replaceWith(新元素) --> 目标元素用新元素来替代
+
+.replaceAll() --> 新元素替换目标元素
