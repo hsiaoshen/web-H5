@@ -91,7 +91,7 @@ src="js/jquery.js" > </script>
   
 #### 添加子元素或者后代元素
 
-##### .append()
+##### .append(),.prepend(),.appendTo(),.prependTo()
 
 在选中的元素集合的内部的最后添加一个子元素
 
@@ -107,4 +107,10 @@ $('div').append(function(index, html){
 //index: 是元素的索引值.
 //html: 是元素的内容.
 ```
+#### 封装
 
+##### .wrap(),.wrapAll(),.wrapInner()
+
+区别：
+
+wrap()是在满足集合的每个元素外面包裹一层HTML结构；wrapAll()是在满足集合的所有元素外面包裹一层HTML结构；wrapInner()是在满足集合的每个元素的内容外部包裹一层HTML结构
