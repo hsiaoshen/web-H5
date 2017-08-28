@@ -125,3 +125,9 @@ $("input[type=text]").focus(function(){
 ### .select()
 
 当用户在一个元素中进行文本选择时，这个元素上的select事件就会被触发。此事件只能用在<input type="text"> 和<textarea>。
+
+## 键盘事件
+
+.keydown(),.keypress(),.keyup()
+
+区别:前面2者当键盘按下去的时候就触发了，后面的当键盘按下去再松开时才会触发
