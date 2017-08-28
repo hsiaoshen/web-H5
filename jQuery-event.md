@@ -56,3 +56,32 @@ jQuery.holdReady( hold )   --> hold是布尔类型
 2. .trigger() 会影响所有与 jQuery 对象相匹配的元素，而 .triggerHandler() 仅影响第一个匹配到的元素。
 3. 使用 .triggerHandler() 触发的事件，并不会在 DOM 树中向上冒泡。 如果它们不是由目标元素直接触发的，那么它就不会进行任何处理。
 4. .triggerHandler() 返回最后一个处理的事件的返回值。如果没有触发任何事件，会返回 undefined。与普通的方法返回 jQuery 对象(这样就能够使用链式用法)相反
+
+#### .trigger()向事件中传数据
+
+1. 向事件中传入任意数据
+```
+$("p").click( function (event, a, b) {
+// when a normal click fires, a and b are undefined
+// for a trigger like below a refers to "foo" and b refers to "bar"
+ 
+} ).trigger("click", ["foo", "bar"]);
+```
+2. 通过event对象传递数据
+```
+var event = jQuery.Event("logged");
+event.user = "foo";
+event.pass = "bar";
+$("body").trigger(event);
+```
+
+3. 键值对传递
+
+```
+$("body").trigger({
+type:"logged",
+user:"foo",
+pass:"bar"
+ 
+});
+```
