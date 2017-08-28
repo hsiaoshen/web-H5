@@ -122,3 +122,6 @@ $("input[type=text]").focus(function(){
   $(this).blur();
 })
 ```
+### .select()
+
+当用户在一个元素中进行文本选择时，这个元素上的select事件就会被触发。此事件只能用在<input type="text"> 和<textarea>。
