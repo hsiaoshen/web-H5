@@ -96,7 +96,7 @@ pass:"bar"
 
 一个元素的值改变的时候将触发change事件。
 
-适用于:<input>元素，<textarea>和<select>元素。
+适用于:input元素，textarea和select元素。
  
 注意：
 1. 对于下拉选择框，复选框和单选按钮，当用户用鼠标作出选择，该事件立即触发
