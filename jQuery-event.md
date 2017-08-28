@@ -49,6 +49,8 @@ jQuery.holdReady( hold )   --> hold是布尔类型
 
 ### .triggerHandler()和.trigger()
 
+共同点:都能触发自定义事件
+
 区别：
 1. 前者触发时不会触发事件的默认行为，比如表单提交，后者会触发
 2. .trigger() 会影响所有与 jQuery 对象相匹配的元素，而 .triggerHandler() 仅影响第一个匹配到的元素。
