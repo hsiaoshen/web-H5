@@ -205,3 +205,49 @@ ctx.fill();
 </html>
 
 ```
+### 画布的缩放
+
+注意：画布的缩放是建立在当前画布的大小之上的，后续的画布操作会被放大或缩小但是前面已经画好的不会改变
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>画布操作</title>
+    <style media="screen">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="600" height="601"></canvas>
+
+    <script type="text/javascript">
+
+    var can = document.querySelector('#canvas');
+    can.style.border = "1px solid red";
+    var ctx = can.getContext("2d");
+
+    ctx.strokeStyle = "red";
+    ctx.lineWidth = 4;
+    ctx.strokeRect(0,0,100,100);
+
+    /*
+    只要对画布进行了缩放，那么后续的绘制都会受到影响
+    */
+    ctx.scale(2,2);//对画布进行了2倍的放大
+    ctx.strokeStyle = "green";
+    ctx.strokeRect(0,0,100,100);
+    ctx.strokeRect(100,100, 20,20);
+
+    ctx.scale(0.5,0.5);//恢复原本尺寸
+    ctx.strokeStyle = "red";
+    ctx.strokeRect(100,100, 20,20);
+
+    </script>
+  </body>
+</html>
+```
