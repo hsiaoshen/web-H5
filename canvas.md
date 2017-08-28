@@ -326,3 +326,18 @@ ctx.globalAlpha = 0.5;
 ```html
 ctx.clip();
 ```
+### 画布保存为图片
+
+语法： canvas.toDataURL(type, encoderOptions);
+
+type可选 , 图片格式，默认为image/png
+
+encoderOptions可选，图片质量。取值范围为 0 到 1 。如果指定图片格式为 image/jpeg 或 image/webp。如果超出取值范围，将会使用默认值 0.92。其他参数会被忽略。
+
+```html
+ctx.fillStyle = 'red';
+ctx.fillRect(x, 10, 50,50);
+img1.src = can.toDataURL('image/png', 1);
+console.log(can.toDataURL('image/png',1);
+```
+
