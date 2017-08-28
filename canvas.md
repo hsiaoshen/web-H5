@@ -122,4 +122,45 @@
 </html>
 
 ```
+### 线性渐变
 
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>线性渐变</title>
+  </head>
+  <body>
+
+
+    <canvas id="canvas" width="600" height="600"></canvas>
+
+    <script type="text/javascript">
+    var can = document.querySelector('#canvas');
+    can.style.border = "1px solid red";
+    var ctx = can.getContext("2d");
+
+    //渐变坐标必须和绘制的图形在同一个区域内，否则就不是渐变了
+    // ctx.createLinearGradient(起点横坐标,起纵,结束横,结束纵);
+    var grd = ctx.createLinearGradient(0,0,200,0);
+
+    //设置颜色，一下只能设置一种
+    grd.addColorStop(0, "red");
+    grd.addColorStop(0.3, "green");
+    grd.addColorStop(0.5, "pink");
+    grd.addColorStop(1, "yellow");
+
+    // 关键点：把渐变设置到填充的样式
+    ctx.fillStyle = grd;
+
+    //展现了超出区域就不是渐变了
+    ctx.fillRect(0,0,200,200);
+    ctx.fillRect(0,240,300,300);
+    ctx.fillRect(400,400,50,50);
+
+    </script>
+  </body>
+</html>
+
+```
