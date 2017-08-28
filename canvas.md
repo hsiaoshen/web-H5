@@ -164,3 +164,14 @@
 </html>
 
 ```
+### 径向渐变
+
+```html
+var circle = ctx.createRadialGradient(300,300,50,300,300,200);
+circle.addColorStop(0, 'red');
+circle.addColorStop(0.5, 'blue');
+circle.addColorStop(1, 'yellow');
+ctx.fillStyle = circle ;
+ctx.arc(300,300,200, 0, 2 * Math.PI);
+ctx.fill();
+```
