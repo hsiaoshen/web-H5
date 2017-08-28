@@ -251,3 +251,46 @@ ctx.fill();
   </body>
 </html>
 ```
+
+### 画布的原点移动
+
+语法: ctx.translate(x, y),设置整个画布的远点，会影响后边的绘制。
+
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>画布操作</title>
+    <style media="screen">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="600" height="601"></canvas>
+
+    <script type="text/javascript">
+
+    var can = document.querySelector('#canvas');
+    can.style.border = "1px solid red";
+    var ctx = can.getContext("2d");
+
+
+    ctx.translate(100,100);
+    ctx.strokeStyle = "red";
+    ctx.lineWidth = 4;
+    ctx.strokeRect(0,0,100,100);
+
+    //恢复原点
+    ctx.translate(-100,-100);
+    ctx.strokeStyle = "green";
+    ctx.strokeRect(0,0,100,100);
+
+    </script>
+  </body>
+</html>
+```
