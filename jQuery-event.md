@@ -138,16 +138,28 @@ $("input[type=text]").focus(function(){
 
  当在一个元素上点击鼠标的右键时,contextmenu事件被发送到这个元素上,但在显示的上下文菜单(右键菜单)之前。 这时上下文菜单键被按下，该事件在html元素上被触发。 任何HTML元素都可以接受此事件。、
  
- ### .focusin() 和 .focusout()
+### .focusin() 和 .focusout()
  
  在元素获取焦点或失去焦点时触发，和.focus()不同的是，支持事件冒泡，比如可以在父元素上查看子元素的焦点情况
  
- ### .hover()    mouseenter和 mouseleave事件综合
+### .hover()    mouseenter和 mouseleave事件综合
  
  ```
  .hover( handlerIn(eventObject), handlerOut(eventObject) )
  ```
  
- ### .mousedown() 和 .mouseup()
+### .mousedown() 和 .mouseup()
  
  鼠标按下和鼠标松开触发
+
+###  .mousemove()
+
+鼠标在元素中移动触发
+
+### .mouseout()和 .mouseover()
+
+鼠标移出和鼠标移入
+
+注意：存在事件冒泡，会造成多次触发
+
+和mouseleave和.mouseenter的区别:leave和enter时只有鼠标指针穿过绑定了的元素时才触发，而out和over经过被选元素和其子元素时都会触发
