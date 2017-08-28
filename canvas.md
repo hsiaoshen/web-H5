@@ -294,3 +294,22 @@ ctx.fill();
   </body>
 </html>
 ```
+### 画布的旋转
+
+rotate(deg) 以画布原点顺时针旋转,不影响前面的，会影响后续操作
+
+### 画布的状态的保存和恢复(只针对画布的位移，旋转和缩放等操作)
+
+好处：可以在不同的状态进行切换，减少了代码量，也会方便
+
+```html
+ctx.strokeStyle = 'red';
+ctx.strokeRect(0,0,100,100);
+ctx.save();//保存当前状态，没有放大
+
+ctx.scale(2,2);
+ctx.strokeRect(0,0,100,100);
+
+ctx.restore();//回复没有放大的状态
+ctx.strokeRect(100,100,50,50);
+```
