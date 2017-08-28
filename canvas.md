@@ -175,3 +175,33 @@ ctx.fillStyle = circle ;
 ctx.arc(300,300,200, 0, 2 * Math.PI);
 ctx.fill();
 ```
+### 背景
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>绘制背景</title>
+  </head>
+  <body>
+    <canvas id="canvas" width="600" height="600"></canvas>
+  </body>
+  <script type="text/javascript">
+  var can = document.querySelector('#canvas');
+  can.style.border = "1px solid red";
+  var ctx = can.getContext("2d");
+
+  var img = new Image();
+  img.src = 'qq.ico';
+  img.alt = '图片'
+
+  img.onload = function(){
+    var pattern = ctx.createPattern(img,'repeat');    //创建pattern对象
+    ctx.fillStyle = pattern;  //设置填充样式为创建好的背景
+    ctx.fillRect(0,0,331,292);
+  }
+  </script>
+</html>
+
+```
