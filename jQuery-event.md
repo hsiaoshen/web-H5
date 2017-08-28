@@ -163,3 +163,12 @@ $("input[type=text]").focus(function(){
 注意：存在事件冒泡，会造成多次触发
 
 和mouseleave和.mouseenter的区别:leave和enter时只有鼠标指针穿过绑定了的元素时才触发，而out和over经过被选元素和其子元素时都会触发
+
+## event对象属性和方法
+
+1. event.target:事件引起的元素
+2. event.currentTarget:在事件冒泡过程中的当前DOM元素。默认等于this。如果您使用jQuery.proxy或另一种形式操作作用域，this 将等于您所提供的context（上下文），而不是event.currentTarget
+3. event.relatedTarget:在事件中涉及的其它任何DOM元素。
+4. event.stopPropagation() : 阻止冒泡
+5. event.preventDefault():阻止默认行为
+6. 
