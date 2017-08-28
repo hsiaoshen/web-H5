@@ -171,4 +171,7 @@ $("input[type=text]").focus(function(){
 3. event.relatedTarget:在事件中涉及的其它任何DOM元素。
 4. event.stopPropagation() : 阻止冒泡
 5. event.preventDefault():阻止默认行为
-6. 
+6. event.pageX/pageY:距离文档的左边和上边的位置
+7. event.timeStamp:这个属性返回事件触发时距离1970年1月1日的毫秒数
+8. event.type:触发的事件类型
+9. event.which: 针对键盘和鼠标事件，这个属性能确定你到底按的是哪个键。对于键盘是acsii码，对于鼠标 1左2中3右
