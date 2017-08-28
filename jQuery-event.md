@@ -43,6 +43,14 @@ jQuery.holdReady( hold )   --> hold是布尔类型
 3. $("body").off("click", "p", foo);   --> 移除绑定事件的指定处理函数foo
 4. $("p").off( "click", "**" )    -->   移除绑定事件的所有处理函数
 
-### .on 只触发一次的绑定
+### .one 只触发一次的绑定
 
 和.on差不多，就是绑定的事件只会触发一次
+
+### .triggerHandler()和.trigger()
+
+区别：
+1. 前者触发时不会触发事件的默认行为，比如表单提交，后者会触发
+2. .trigger() 会影响所有与 jQuery 对象相匹配的元素，而 .triggerHandler() 仅影响第一个匹配到的元素。
+3. 使用 .triggerHandler() 触发的事件，并不会在 DOM 树中向上冒泡。 如果它们不是由目标元素直接触发的，那么它就不会进行任何处理。
+4. .triggerHandler() 返回最后一个处理的事件的返回值。如果没有触发任何事件，会返回 undefined。与普通的方法返回 jQuery 对象(这样就能够使用链式用法)相反
