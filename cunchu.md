@@ -29,6 +29,28 @@
 会在客户端请求中查找session_id,若存在，直接拿session_id直接拿来检索使用;若不存在，会为该客户端创建session_id,然后在响应时返回session_Id存在浏览器客户端中
 ***
 
+#### express中是session使用
+
+安装：
+
+```shell
+$ npm i express-session --save
+```
+在app.js中进行设置：
+
+```js
+app.use(session({
+  store: session 的存储方式，默认存放在内存中，也可以使用 redis，mongodb 等,
+  resave: 即使 session 没有被修改，也保存 session 值，默认为 true,
+  saveUninitialized: false,
+  secret:通过设置的 secret 字符串，来计算 hash 值并放在 cookie 中，使产生的 signedCookie 防篡改,
+  rolling:每个请求都重新设置一个 cookie，默认为 false,
+  cookie: {         // 设置存放 session id 的 cookie 的相关选项
+      maxAge: 1000 * 60 * 30
+  }
+}));
+```
+
 ## sessionStorage
 
 ##  localStorage
