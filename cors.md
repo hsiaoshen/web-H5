@@ -20,7 +20,7 @@
 
 ## 页面之间的跨域
 
-### 关于cookie的资源共享
+### cookie
 
 比如淘宝和天猫，共用同一个账号和登录状态，但是不是一个域名，如何做到呢？
 
@@ -136,6 +136,117 @@ iframe窗口页面
 
     //window.name传递的是字符串，可以json的方法
     window.name = JSON.stringify(data);
+
+</script>
+
+</body>
+</html>
+```
+#### hash(也需要实时监听)
+
+父页面
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>window.location.hash</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .f {
+            width: 1000px;
+            height: 300px;
+            margin: 100px auto;
+            border: 1px solid #a94442;
+        }
+
+        #frame {
+            width: 100%;
+            height: 100%;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1 id="h">我是源窗口</h1>
+
+<div class="f">
+    <iframe id="frame" src="./test-iframe.html" frameborder="0"></iframe>
+</div>
+
+<script>
+
+/*
+前提：页面之间是iframe的父子关系
+使用hash进行通信，使用hashchange事件即可监听自己hansh的变化
+通信方式：需要设置对方的location.href来改变hash(其他href中的数据不能变，只改hash)
+数据会附带到地址栏，所有数据量有限
+*/
+    window.onload  = function () {
+        var h = document.querySelector("#h");
+        var frame = document.querySelector("#frame");
+
+
+        //frame.contentWindow是嵌套页面的window
+        frame.contentWindow.document.querySelector("h1").style.color = 'red';
+
+
+        var originUrl = frame.src;//test-iframe.html
+        var num = 0;
+
+        setInterval(function () {
+            //改变子窗口的hash,通过hash传递数据
+            frame.contentWindow.location.href = originUrl + '#' + num++;
+        }, 1000);
+
+        //监听自己的hash的变化
+        window.onhashchange = function () {
+            h.innerHTML = window.location.hash;
+        };
+
+    };
+</script>
+
+
+</body>
+</html>
+```
+
+iframe窗口页面
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1 id="h">我是 iframe ...</h1>
+
+<script>
+    var h = document.querySelector("#h");
+
+    //window.parent 是打开当前页面的父窗口
+    var originUrl = window.parent.location.href;
+
+    var num = 0;
+
+    //监听自己的hash变化
+    window.onhashchange = function () {
+        h.innerHTML = window.location.hash;
+        window.parent.location.href = originUrl + '#' + num++;
+    };
 
 </script>
 
