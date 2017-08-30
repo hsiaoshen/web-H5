@@ -19,6 +19,136 @@
 
 需要在后端设置http头部Access-Control-Allow-Origin
 
+#### 前端代码
+
+1. 
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>cors</title>
+</head>
+<body>
+
+<!-- 该代码运行于 127.0.0.1:80 端口 -->
+	
+	<script type="text/javascript">
+
+        //ie8兼容性代码
+		function createCORSRequest(method, url){
+			var xhr = new XMLHttpRequest();
+			if ("withCredentials" in xhr){
+				console.log("XMLHttpRequest...");
+				xhr.open(method, url, true);
+			} else if (typeof XDomainRequest != "undefined"){
+				console.log("XDomainRequest...");
+				vxhr = new XDomainRequest();
+				xhr.open(method, url);
+			} else {
+				xhr = null;
+			}
+			return xhr;
+		}
+
+		var request = createCORSRequest("get", "http://127.0.0.1:8000/test");
+		if (request){
+			request.onload = function(){
+				//收到跨域ajax响应之后的数据responseText
+				console.log(request.responseText);
+			};
+
+			request.onerror = function(){
+				console.log("request error .....");
+			}
+			request.send();
+		}
+
+</script>
+</body>
+</html>
+```
+2. 
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>cors</title>
+</head>
+<body>
+
+<!-- 该代码运行于 http://127.0.0.1:80 端口 -->
+
+<script type="text/javascript">
+
+/*
+实现ajax跨域：只需要访问的后端允许即可，允许需要后端设置 http头部 Access-Control-Allow-Origin
+*/
+
+var request = new XMLHttpRequest();
+request.open("get", "http://127.0.0.1:8000/test");
+
+request.onload = function(){
+  console.log(request.responseText);
+};
+
+request.send();
+
+</script>
+</body>
+</html>
+```
+3.jQuery.ajax
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <!--  此处的 "/" 不是你操作系统根目录，是你的服务器的根目录  -->
+    <script src="/jquery-3.0.0.js" charset="utf-8"></script>
+    <script type="text/javascript">
+
+    $.ajax({
+      url: "http://127.0.0.1:8000/test",
+      method: "get"
+    }).done(function(data){
+      console.log(data);
+    });
+
+    </script>
+
+  </body>
+</html>
+```
+
+#### 后端是nodejs编写的
+
+```js
+var fs = require("fs");
+var http = require("http");
+var url = require("url");
+
+var data = "{'name': 'lisi', 'age': 10 }";
+
+http.createServer(function(request, response){
+    var path = url.parse(request.url).path;
+    if (path == "/test"){
+
+      //设置允许客户端的跨域ajax请求
+      response.setHeader("Access-Control-Allow-Origin", "*" );
+      response.writeHead(200, {"Content-type": "text/plain"});
+      response.end(data);
+    }
+}).listen(8000);
+
+console.log("监听 127.0.0.1:8000 ....");
+```
+
 
 ## 页面之间的跨域
 
