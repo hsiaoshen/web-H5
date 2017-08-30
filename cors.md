@@ -29,9 +29,116 @@
 #### document.domain的具体操作（只适用于Cookie和iframe）
 
 ***
-举例来说，A网页是http://w1.example.com/a.html，B网页是http://w2.example.com/b.html，那么只要设置相同的document.domain，两个网页就可以共享Cookie。
+举例来说，A网页是‘http://w1.example.com/a.html’，B网页是‘http://w2.example.com/b.html’，那么只要设置相同的document.domain，两个网页就可以共享Cookie。
 
 ```
 document.domain = 'example.com';
 ```
 ***
+### iframe
+
+#### window.name(需要监听)
+
+父页面
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>window.name</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .f {
+            width: 1000px;
+            height: 300px;
+            margin: 100px auto;
+            border: 1px solid #a94442;
+        }
+
+        #frame {
+            width: 100%;
+            height: 100%;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+
+  <!--
+   前提：使用 iframe时
+   window.name可以实现页面通信，但是需要监听window.name的变化
+ -->
+
+  <script type="text/javascript">
+  var data = {
+    name: '外部页面'
+  };
+
+  window.name = JSON.stringify(data);
+  </script>
+
+  <div class="f">
+    <iframe id="frame" src="./test-iframe.html" frameborder="0"></iframe>
+  </div>
+
+<script>
+
+    window.onload  = function () {
+        var frame = document.querySelector("#frame");
+
+        //frame.contentWindow 是得到嵌套页面的window
+        frame.contentWindow.document.querySelector("h1").innerHTML = '我被该成红色';
+        frame.contentWindow.document.querySelector("h1").style.color = 'red';
+
+        /*
+         通过iframe的window.name属性可以访问iframe窗口传递的数据
+         缺点： 需要监听iframe中window.name的值变换
+         */
+        console.log(JSON.parse(frame.contentWindow.name));
+
+    };
+</script>
+
+
+</body>
+</html>
+```
+
+iframe窗口页面
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>我是 iframe ...</h1>
+
+<script>
+    var data = {
+        name: '嵌套页面'
+    };
+
+    //window.parent 拿到父页面的window
+    console.log(JSON.parse(window.parent.name));
+
+    //window.name传递的是字符串，可以json的方法
+    window.name = JSON.stringify(data);
+
+</script>
+
+</body>
+</html>
+```
