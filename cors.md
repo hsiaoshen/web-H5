@@ -149,6 +149,125 @@ http.createServer(function(request, response){
 console.log("监听 127.0.0.1:8000 ....");
 ```
 
+### JSONP
+
+使用跨域要求必须只能是GET请求
+
+#### 使用script标签带着回调函数
+
+前端
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+
+ <script>
+  //跨域请求的数据就是 data
+ 	function handler(data){
+ 		console.log("handler被调用了", data);
+ 	}
+
+ </script>
+
+  <!-- 当前的页面运行于 127.0.0.1:80 -->
+  <!--
+   jsonp只能发送 get 请求
+   script的特点时一旦加载成功就会立刻执行
+  -->
+
+ <script type="text/javascript" src="http://127.0.0.1:8000?callback=handler"></script>
+
+</body>
+</html>
+```
+后端
+```js
+
+var fs = require("fs");
+var http = require("http");
+var url = require("url");
+
+http.createServer(function(req, res){
+	 var queryObj = url.parse(req.url, true).query;
+	 /*
+	    queryObj = {"callback": "handler"}
+	 */
+
+	 console.log(queryObj);
+
+	 fs.readFile("./test.json", function(err, data){
+		 //"handler({name:'lisi', age: 10})"
+		 res.write(queryObj.callback+ "(" + data  + ")");
+		 res.end();
+	 });
+
+
+}).listen(8000);
+
+console.log("监听 127.0.0.1:8000 ...");
+```
+
+#### jQuery的ajax跨域
+
+前端
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <script src="/jquery-3.0.0.js" charset="utf-8"></script>
+    <script type="text/javascript">
+
+    //jsonp被指定的调用函数
+    function handler(data){
+      console.log("回调函数handler被调用",data);
+    }
+
+    //发送的请求  http://127.0.0.1:8000?callback=handler
+    $.ajax({
+      url:"http://127.0.0.1:8000/",
+      method: "get",
+      dataType: "jsonp",
+      jsonp: "callback",
+      jsonpCallback: "handler"
+    }).done(function(data, textStatus, jqXHR){
+      //此处的data为 服务端返回的函数调用(handler)的参数部分
+      console.log(data);
+    });
+
+    </script>
+
+  </body>
+</html>
+```
+后端
+
+```js
+
+var fs = require("fs");
+var http = require("http");
+var url = require("url");
+
+http.createServer(function(req, res){
+	var queryObj = url.parse(req.url, true).query;
+	var obj = JSON.stringify({name: 'lisi'});
+
+	res.write(queryObj.callback + "(" + obj + ")");
+	res.end();
+
+}).listen(8000);
+
+console.log("监听 127.0.0.1:8000 ...");
+```
 
 ## 页面之间的跨域
 
