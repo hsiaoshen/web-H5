@@ -41,7 +41,7 @@ Set-Cookie: key=value; domain=.example.com; path=/
 ```
 这样的话，二级域名和三级域名不用做任何设置，都可以读取这个Cookie。
 ***
-### iframe
+### iframe(前提在一个域上，可以把文件放在apache上进行测试)
 
 #### window.name(需要监听)
 
