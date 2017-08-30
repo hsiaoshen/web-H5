@@ -259,3 +259,138 @@ iframe窗口页面
 </body>
 </html>
 ```
+#### window.postMessage
+
+父页面
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>利用window.postMessage</title>
+    <style>
+
+        h1 {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1>window.open 打开新页面</h1>
+<button id="btn">点击打开</button>
+
+<script>
+
+/*
+跨域，跨窗口通信
+window.open
+xxx.postMessage
+xxx.onmessage
+*/
+
+    window.name = "father";
+    var btn = document.querySelector("#btn");
+    var timer = null;
+
+    //监听其他页面发来的数据
+    window.onmessage = function (e) {
+      console.log(e.data);
+    };
+
+    btn.onclick = function (e) {
+        clearInterval(timer);
+
+        /*window.open,用于获得一个要打开的页面window
+         第二个参数，用于指定新窗口的window.name
+          返回值为 新窗口的window
+         */
+        var newWindow = window.open("./test-iframe.html", "son");
+        newWindow.onload = function () {
+            //新窗口加载完毕之后，可以直接操作新窗口的元素
+            newWindow.document.querySelector("h1").style.color = 'red';
+        };
+
+
+        var num = 0;
+        setInterval(function(){
+            //利用postMessage给打开的页面发送数据
+            //第二个参数是给指定域名的页面发送数据
+            newWindow.postMessage(num++, "*");
+        },1000);
+
+    };
+</script>
+
+
+</body>
+</html>
+```
+
+iframe窗口页面
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>利用window.postMessage</title>
+    <style>
+
+        h1 {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1>window.open 打开新页面</h1>
+<button id="btn">点击打开</button>
+
+<script>
+
+/*
+跨域，跨窗口通信
+window.open
+xxx.postMessage
+xxx.onmessage
+*/
+
+    window.name = "father";
+    var btn = document.querySelector("#btn");
+    var timer = null;
+
+    //监听其他页面发来的数据
+    window.onmessage = function (e) {
+      console.log(e.data);
+    };
+
+    btn.onclick = function (e) {
+        clearInterval(timer);
+
+        /*window.open,用于获得一个要打开的页面window
+         第二个参数，用于指定新窗口的window.name
+          返回值为 新窗口的window
+         */
+        var newWindow = window.open("./test-iframe.html", "son");
+        newWindow.onload = function () {
+            //新窗口加载完毕之后，可以直接操作新窗口的元素
+            newWindow.document.querySelector("h1").style.color = 'red';
+        };
+
+
+        var num = 0;
+        setInterval(function(){
+            //利用postMessage给打开的页面发送数据
+            //第二个参数是给指定域名的页面发送数据
+            newWindow.postMessage(num++, "*");
+        },1000);
+
+    };
+</script>
+
+
+</body>
+</html>
+```
