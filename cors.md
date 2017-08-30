@@ -13,9 +13,11 @@
 3. AJAX 请求不能发送。
 
 
-## 浏览器和客户端之间的跨域
+## 浏览器和客户端之间的跨域(ajax)
 
+### cors
 
+需要在后端设置http头部Access-Control-Allow-Origin
 
 
 ## 页面之间的跨域
