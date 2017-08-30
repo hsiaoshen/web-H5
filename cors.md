@@ -34,6 +34,12 @@
 ```
 document.domain = 'example.com';
 ```
+
+另外，服务器也可以在设置Cookie的时候，指定Cookie的所属域名为一级域名，比如.example.com。
+```
+Set-Cookie: key=value; domain=.example.com; path=/
+```
+这样的话，二级域名和三级域名不用做任何设置，都可以读取这个Cookie。
 ***
 ### iframe
 
