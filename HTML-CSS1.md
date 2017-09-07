@@ -101,13 +101,27 @@ DTD:文档类型定义(Document Type Definition)是一套为了进行程序间�
 
 7. 什么是语义化?为什么要用语义化的标签?
 
-义化是指用合理HTML标记以及其特有的属性去格式化文档内容。通俗地讲,语义化就是对数据和信息进行处理,使得机器可以理解.
+语义化是指用合理HTML标记以及其特有的属性去格式化文档内容。通俗地讲,语义化就是对数据和信息进行处理,使得机器可以理解.
 
 ***
 1. 对搜索引擎友好,有助于爬虫抓取更多有效信息
 2. 利于其他设备(如盲人阅读器)的解析,可以无障碍阅读.
 3. 在没有CSS的样式情况下,清晰的显示文档结构,便于开发者阅读和写出优雅的代码
 ***
+常用的语义化标签有:section，side，article，header，footer，nav,canvas,audio,video
+
+如何在低版本上可以使用语义化标签:以hack的形式,添加补丁
+
+```
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+```
+如何自定义一个标签可以使用:document.createElement创建标签，然后给对应标签一定CSS属性
+
 8. a标签使用:
 
 ```html
