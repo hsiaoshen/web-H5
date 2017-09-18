@@ -67,7 +67,7 @@ removeItem() | -- | 接受一个键名作参数，将该键名从存储中删除
 clear() | -- | 清空存储
 
 
-##  localStorage（访问同一个localStarage，必须同源）
+##  localStorage（访问同一个localStarage，必须同源或者存在访问关系）
 
 将数据存储到客户端本地，除非手动清除否则就一直存在
 
