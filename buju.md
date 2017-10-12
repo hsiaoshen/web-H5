@@ -302,3 +302,10 @@
   </body>
 </html>
 ```
+## 实现动态div
+
+2个div，一个高度随着另一个div的高度变化而变化
+
+***
+思路:在外套一层div，设置display:table;给里层2个元素设置dispaly:table-cell,并为其中一个设置宽度
+***
