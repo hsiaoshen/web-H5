@@ -32,14 +32,32 @@
 
 地址栏输入url -> 应用层dns解析（先本地缓存查找若有返回ip，若没有就向根域名服务器查找直到找到对应的ip）-> 应用层客户端向该ip服务器发起HTTP请求(包括请求报头（包括请求方法，协议，目标url,是否缓存等）和请求主体) ->传输层TCP传输报文（三次握手）->网络层IP协议查询MAC地址 -> 数据到达数据链路层 ->  服务器接受请求并处理响应 -> 服务器返回相应文件 -> 渲染(jiexiHTML以构建DOM树(标签) –> 构建渲染树（加入css和style样式） –> 布局渲染树 –> 绘制渲染树)
 
-### 常见的IO操作及优化
+### 优化方式
 
-#### http请求
+1. 尽可能的减少 HTTP 的请求数 [content] 
+```
+减少http请求:使用精灵图(将页面上的背景图合并为一张,可以通过background-position来获取不同的背景图片),使用字体图标,合并css,js文件(可以开发时分开,在后台进行合并.对于首页可以把css和js写在html文件里),优化图片
+```
+2. 使用 CDN（Content Delivery Network） [server] (减少带宽)
+```
+在现有的internet外增加一层新的网络架构(cache服务器),将网站内容发布到最近用户的cache服务器上,通过DNS负载均衡技术,判断用户的来源然后在用户最近的cache服务器上取所需的内容,减少了在网络上传输时间
+```
+3. 添加 Expires头(或者 Cache-control ) [server] 
+```
+通过报文设置指定类型的文件在浏览器的缓存时间,可以从network的报头信息中看到
+```
+4. Gzip 组件 [server] 
+```
 
-问题:http请求的过程比较复杂，多次请求会造成时间和资源成本过高，给用户不好体验。
-
-解决：减少http请求次数，能合并的就合并，比如使用精灵图，合并css和js文件
-
-
-#### 
+```
+5. 将 CSS 样式放在页面的上方 [css] 
+6. 将脚本移动到底部（包括内联的） [javascript] 
+7. 避免使用 CSS 中的 Expressions [css] 
+8. 将 JavaScript 和 CSS 独立成外部文件 [javascript] [css] 
+9. 减少 DNS 查询 [content] 
+10. 压缩 JavaScript 和 CSS (包括内联的) [javascript] [css] 
+11. 避免重定向 [server] 
+12. 移除重复的脚本 [javascript] 
+13. 配置实体标签（ETags） [css] 
+14. 使 AJAX 缓存(尽量使用get方法):
 
