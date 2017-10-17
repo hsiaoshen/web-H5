@@ -59,11 +59,34 @@
 js会阻塞加载,并且有些需要页面加载完毕后才能执行js,所以把js放在底部
 ```
 7. 避免使用 CSS 中的 Expressions [css] 
-8. 将 JavaScript 和 CSS 独立成外部文件 [javascript] [css] 
-9. 减少 DNS 查询 [content] 
-10. 压缩 JavaScript 和 CSS (包括内联的) [javascript] [css] 
+```
+多了嵌套麻烦
+```
+8. 将 JavaScript 和 CSS 独立成外部文件 [javascript] [css]
+```
+方便维护和缓存,虽然多了2次请求
+```
+9. 减少 DNS 查询 [content]
+```
+域名好记但是需要通过DNS转换成ip地址,但是域名解析需要花费很多时间,所以可以设置缓存或者尽量控制域名个数减少DNS查询
+```
+10. 压缩 JavaScript 和 CSS (包括内联的) [javascript] [css]
+```
+本地压缩:比如减少字节数,或者类似于jquery的min版
+```
 11. 避免重定向 [server] 
+```
+每增加一次重定向就会多一次web请求
+```
 12. 移除重复的脚本 [javascript] 
 13. 配置实体标签（ETags） [css] 
+```
+Etags:被请求变量的实体值,使用Etags可以减少带宽和负载,本质是服务器产生Etag返回给页面浏览器缓存,下次访问是会把Etag发送给服务器判断是否发生变化,若未修改返回304和空响应体
+[实现](http://www.kuqin.com/web/20080513/8442.html)
+```
 14. 使 AJAX 缓存(尽量使用get方法):
+
+```
+数据缓存:使用redis
+```
 
