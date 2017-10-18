@@ -1,6 +1,7 @@
 # 跨域
 
 [阮一峰跨域](http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html)
+[掘金](https://juejin.im/entry/590c257761ff4b006238bdc9)
 
 ## 为什么要跨域？
 
