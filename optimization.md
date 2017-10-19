@@ -92,6 +92,7 @@ Etags:被请求变量的实体值,使用Etags可以减少带宽和负载,本质�
 
 ## 图片优化
 
+
 ### 使用base64代替图片
 
 场景:适用于图片大小小于2kb,页面图片不是很多的情况
@@ -110,5 +111,6 @@ dns预加载:淘宝使用link引入资源,link上的rel:dns-perfetch
 
 ## 图片加载优化
 
-### 图片的预加载
+加载图片的方式:background-image(css) 和img标签(html) 以及 new IMage(js)
 
+### 图片的预加载
