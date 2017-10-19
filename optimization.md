@@ -102,6 +102,8 @@ Etags:被请求变量的实体值,使用Etags可以减少带宽和负载,本质�
 
 ### 图片预加载
 
+dns预加载:淘宝使用link引入资源,link上的rel:dns-perfetch
+
 ### 使用css、svg、canvas或iconfont代替图片
 
-### 更好的图片格式(webP)
+### 更好的图片格式(webP,bpg,sharpP)
