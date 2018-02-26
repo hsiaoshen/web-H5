@@ -39,3 +39,7 @@
 </body> 
 </html>
 ```
+技术要点：
+1. document.all的使用--> 获取当前页面的所有元素集合
+2. this的使用
+3. document.all获取该页面的id或者name元素:document.all.xxx
