@@ -1,0 +1,41 @@
+# 关于select的使用
+
+使用select实现一些功能
+
+## 2个select对应位置联动
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>select</title>
+	<style>
+		#domain, #email-suffix {
+			width: 100px;
+			/*height: 100px;*/
+		}
+		#email-suffix {
+			font-size: 12px;
+			padding: 1px 0;
+		}
+	</style>
+</head>
+<body>
+	<select id="domain" onchange="Ld(this,document.all.emailSuffix)">
+		<option value="YMTC">YMTC</option>
+		<option value="XMC" >XMC</option>
+	</select>
+
+	<select id="emailSuffix" onchange="Ld(this,document.all.domain)">
+		<option value="@YMTC.com">@YMTC.com</option>
+		<option value="@XMC.com">@XMC.com</option>
+	</select>
+	<script>
+		function Ld (obj, obj2){
+			 obj2.options[obj.selectedIndex].selected=true;
+		}
+	</script>
+</body> 
+</html>
+```
