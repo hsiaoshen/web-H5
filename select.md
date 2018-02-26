@@ -43,3 +43,4 @@
 1. document.all的使用--> 获取当前页面的所有元素集合
 2. this的使用
 3. document.all获取该页面的id或者name元素:document.all.xxx
+4. 关于selectedIndex属性:返回的是选中元素的位置序号，若是多选则返回选中的第一个
